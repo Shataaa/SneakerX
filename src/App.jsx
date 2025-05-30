@@ -27,7 +27,7 @@ function App() {
         {/* Main Layout */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/karyawan" element={<Karyawan />} />
+          <Route path="/Karyawan" element={<Karyawan />} />
           <Route path="/customer" element={<Customers />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/CompanyProfileList" element={<CompanyProfileList />} />
