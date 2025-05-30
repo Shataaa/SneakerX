@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "name": "Nike Air Force 1",
+        "brand": "Nike",
+        "price": 1200000,
+        "category": "Sneakers",
+        "image": "/img/nike-air-force-1.jpg",
+        "description": "Sepatu klasik dengan desain minimalis dan nyaman untuk aktivitas sehari-hari.",
+        "stock": 50
+    },
+    {
+        "id": 2,
+        "name": "Air Jordan 1",
+        "brand": "Nike",
+        "price": 2000000,
+        "category": "Basketball",
+        "image": "/img/air-jordan-1.jpg",
+        "description": "Sepatu basket legendaris dengan desain ikonik dan performa tinggi.",
+        "stock": 30
+    },
+    {
+        "id": 3,
+        "name": "Air Jordan 2",
+        "brand": "Nike",
+        "price": 2100000,
+        "category": "Basketball",
+        "image": "/img/air-jordan-2.jpg",
+        "description": "Sepatu basket premium dengan kenyamanan dan daya tahan luar biasa.",
+        "stock": 25
+    },
+    {
+        "id": 4,
+        "name": "Air Jordan 3",
+        "brand": "Nike",
+        "price": 2200000,
+        "category": "Basketball",
+        "image": "/img/air-jordan-3.jpg",
+        "description": "Sepatu dengan desain inovatif dan teknologi canggih untuk performa maksimal.",
+        "stock": 20
+    },
+    {
+        "id": 5,
+        "name": "Air Jordan 4",
+        "brand": "Nike",
+        "price": 2300000,
+        "category": "Basketball",
+        "image": "/img/air-jordan-4.jpg",
+        "description": "Sepatu basket dengan desain modern dan kenyamanan optimal.",
+        "stock": 15
+    },
+    {
+        "id": 6,
+        "name": "Adidas Ultraboost",
+        "brand": "Adidas",
+        "price": 1800000,
+        "category": "Running",
+        "image": "/img/adidas-ultraboost.jpg",
+        "description": "Sepatu lari dengan bantalan responsif dan desain stylish.",
+        "stock": 40
+    },
+    {
+        "id": 7,
+        "name": "Adidas Superstar",
+        "brand": "Adidas",
+        "price": 1400000,
+        "category": "Lifestyle",
+        "image": "/img/adidas-superstar.jpg",
+        "description": "Sepatu ikonik dengan desain klasik yang cocok untuk gaya kasual.",
+        "stock": 35
+    },
+    {
+        "id": 8,
+        "name": "Vans Old Skool",
+        "brand": "Vans",
+        "price": 900000,
+        "category": "Skateboarding",
+        "image": "/img/vans-old-skool.jpg",
+        "description": "Sepatu skate klasik dengan desain timeless dan daya tahan tinggi.",
+        "stock": 60
+    },
+    {
+        "id": 9,
+        "name": "Vans Slip-On",
+        "brand": "Vans",
+        "price": 850000,
+        "category": "Lifestyle",
+        "image": "/img/vans-slip-on.jpg",
+        "description": "Sepatu slip-on yang nyaman dan mudah dipakai untuk aktivitas sehari-hari.",
+        "stock": 45
+    },
+    {
+        "id": 10,
+        "name": "Nike Dunk Low",
+        "brand": "Nike",
+        "price": 1500000,
+        "category": "Sneakers",
+        "image": "/img/nike-dunk-low.jpg",
+        "description": "Sepatu dengan desain klasik dan warna menarik untuk gaya kasual.",
+        "stock": 50
+    },
+    {
+        "id": 11,
+        "name": "Adidas NMD R1",
+        "brand": "Adidas",
+        "price": 1700000,
+        "category": "Running",
+        "image": "/img/adidas-nmd-r1.jpg",
+        "description": "Sepatu lari dengan desain modern dan kenyamanan maksimal.",
+        "stock": 30
+    },
+    {
+        "id": 12,
+        "name": "Vans Authentic",
+        "brand": "Vans",
+        "price": 800000,
+        "category": "Lifestyle",
+        "image": "/img/vans-authentic.jpg",
+        "description": "Sepatu klasik dengan desain sederhana dan nyaman untuk sehari-hari.",
+        "stock": 40
+    },
+    {
+        "id": 13,
+        "name": "Nike Blazer Mid",
+        "brand": "Nike",
+        "price": 1400000,
+        "category": "Sneakers",
+        "image": "/img/nike-blazer-mid.jpg",
+        "description": "Sepatu dengan desain retro yang cocok untuk berbagai gaya.",
+        "stock": 25
+    },
+    {
+        "id": 14,
+        "name": "Adidas Yeezy Boost 350",
+        "brand": "Adidas",
+        "price": 3000000,
+        "category": "Lifestyle",
+        "image": "/img/adidas-yeezy-boost-350.jpg",
+        "description": "Sepatu eksklusif dengan desain futuristik dan kenyamanan luar biasa.",
+        "stock": 10
+    },
+    {
+        "id": 15,
+        "name": "Vans Sk8-Hi",
+        "brand": "Vans",
+        "price": 950000,
+        "category": "Skateboarding",
+        "image": "/img/vans-sk8-hi.jpg",
+        "description": "Sepatu tinggi dengan desain klasik untuk aktivitas skateboarding.",
+        "stock": 35
+    },
+    {
+        "id": 16,
+        "name": "Nike Air Max 90",
+        "brand": "Nike",
+        "price": 1600000,
+        "category": "Sneakers",
+        "image": "/img/nike-air-max-90.jpg",
+        "description": "Sepatu dengan bantalan udara untuk kenyamanan sepanjang hari.",
+        "stock": 40
+    },
+    {
+        "id": 17,
+        "name": "Adidas Gazelle",
+        "brand": "Adidas",
+        "price": 1300000,
+        "category": "Lifestyle",
+        "image": "/img/adidas-gazelle.jpg",
+        "description": "Sepatu dengan desain klasik yang cocok untuk berbagai aktivitas.",
+        "stock": 50
+    },
+    {
+        "id": 18,
+        "name": "Vans Era",
+        "brand": "Vans",
+        "price": 850000,
+        "category": "Lifestyle",
+        "image": "/img/vans-era.jpg",
+        "description": "Sepatu dengan desain sederhana dan nyaman untuk sehari-hari.",
+        "stock": 45
+    },
+    {
+        "id": 19,
+        "name": "Nike Air Zoom Pegasus",
+        "brand": "Nike",
+        "price": 1800000,
+        "category": "Running",
+        "image": "/img/nike-air-zoom-pegasus.jpg",
+        "description": "Sepatu lari dengan teknologi canggih untuk performa maksimal.",
+        "stock": 30
+    },
+    {
+        "id": 20,
+        "name": "Adidas Stan Smith",
+        "brand": "Adidas",
+        "price": 1400000,
+        "category": "Lifestyle",
+        "image": "/img/adidas-stan-smith.jpg",
+        "description": "Sepatu ikonik dengan desain minimalis dan elegan.",
+        "stock": 35
+    }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "customerId": 1,
+        "customerName": "Esthera Jackson",
+        "email": "esthera@simmple.com",
+        "avatar": "/img/esthera.jpg",
+        "status": "Online",
+        "review": "Pelayanan sangat cepat dan ramah. Sepatunya sangat nyaman dipakai!"
+    },
+    {
+        "customerId": 2,
+        "customerName": "Alexa Liras",
+        "email": "alexa@simmple.com",
+        "avatar": "/img/alexa.jpg",
+        "status": "Offline",
+        "review": "Pengiriman tepat waktu dan sepatu sesuai dengan deskripsi. Sangat puas!"
+    },
+    {
+        "customerId": 3,
+        "customerName": "Laurent Michael",
+        "email": "laurent@simmple.com",
+        "avatar": "/img/laurent.jpg",
+        "status": "Online",
+        "review": "Sepatunya sangat stylish dan cocok untuk acara formal maupun santai."
+    },
+    {
+        "customerId": 4,
+        "customerName": "Freduardo Hill",
+        "email": "freduardo@simmple.com",
+        "avatar": "/img/freduardo.jpg",
+        "status": "Online",
+        "review": "Harga sepatu sangat terjangkau dengan kualitas yang luar biasa."
+    },
+    {
+        "customerId": 5,
+        "customerName": "Daniel Thomas",
+        "email": "daniel@simmple.com",
+        "avatar": "/img/daniel.jpg",
+        "status": "Offline",
+        "review": "Sepatu sangat ringan dan nyaman untuk dipakai seharian."
+    },
+    {
+        "customerId": 6,
+        "customerName": "Mark Wilson",
+        "email": "mark@simmple.com",
+        "avatar": "/img/mark.jpg",
+        "status": "Offline",
+        "review": "Website sangat mudah digunakan, dan sepatu sampai dalam kondisi sempurna."
+    },
+    {
+        "customerId": 7,
+        "customerName": "Sophia Taylor",
+        "email": "sophia@simmple.com",
+        "avatar": "/img/sophia.jpg",
+        "status": "Online",
+        "review": "Promosi diskon sangat membantu, dan sepatu sesuai dengan ekspektasi."
+    },
+    {
+        "customerId": 8,
+        "customerName": "James Anderson",
+        "email": "james@simmple.com",
+        "avatar": "/img/james.jpg",
+        "status": "Offline",
+        "review": "Tim customer service sangat responsif. Sepatu sangat nyaman untuk olahraga."
+    },
+    {
+        "customerId": 9,
+        "customerName": "Emily Davis",
+        "email": "emily@simmple.com",
+        "avatar": "/img/emily.jpg",
+        "status": "Online",
+        "review": "Sepatu sangat ringan dan cocok untuk jogging setiap pagi."
+    },
+    {
+        "customerId": 10,
+        "customerName": "Michael Brown",
+        "email": "michael@simmple.com",
+        "avatar": "/img/michael.jpg",
+        "status": "Offline",
+        "review": "Desain sepatu sangat modern dan cocok untuk anak muda."
+    },
+    {
+        "customerId": 11,
+        "customerName": "Olivia Johnson",
+        "email": "olivia@simmple.com",
+        "avatar": "/img/olivia.jpg",
+        "status": "Online",
+        "review": "Deskripsi produk sangat jelas, dan sepatu sesuai dengan gambar."
+    },
+    {
+        "customerId": 12,
+        "customerName": "William Martinez",
+        "email": "william@simmple.com",
+        "avatar": "/img/william.jpg",
+        "status": "Offline",
+        "review": "Sepatu sangat awet dan tahan lama meskipun sering digunakan."
+    },
+    {
+        "customerId": 13,
+        "customerName": "Isabella Garcia",
+        "email": "isabella@simmple.com",
+        "avatar": "/img/isabella.jpg",
+        "status": "Online",
+        "review": "Tampilan website sangat menarik, dan sepatu sangat nyaman."
+    },
+    {
+        "customerId": 14,
+        "customerName": "Ethan Moore",
+        "email": "ethan@simmple.com",
+        "avatar": "/img/ethan.jpg",
+        "status": "Offline",
+        "review": "Pengiriman sangat cepat, dan sepatu sesuai dengan ukuran."
+    },
+    {
+        "customerId": 15,
+        "customerName": "Ava White",
+        "email": "ava@simmple.com",
+        "avatar": "/img/ava.jpg",
+        "status": "Online",
+        "review": "Sepatu sangat nyaman untuk digunakan di berbagai aktivitas."
+    }
+]

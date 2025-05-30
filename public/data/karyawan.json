@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "position": "Store Manager",
+        "photo": "/img/john.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "position": "Sales Associate",
+        "photo": "/img/jane.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Michael Brown",
+        "position": "Inventory Specialist",
+        "photo": "/img/michael.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Emily Davis",
+        "position": "Cashier",
+        "photo": "/img/emily.jpg"
+    },
+    {
+        "id": 5,
+        "name": "David Wilson",
+        "position": "Customer Service Representative",
+        "photo": "/img/david.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Sophia Taylor",
+        "position": "Marketing Coordinator",
+        "photo": "/img/sophia.jpg"
+    }
+]

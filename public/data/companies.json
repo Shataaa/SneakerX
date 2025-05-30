@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "nama": "PT Sukses Makmur",
+    "alamat": "Jl. Merdeka No. 1, Jakarta",
+    "lokasi": "Jakarta",
+    "telepon": "021-12345678",
+    "email": "info@suksesmakmur.com"
+  },
+  {
+    "id": 2,
+    "nama": "CV Maju Jaya",
+    "alamat": "Jl. Sudirman No. 2, Bandung",
+    "lokasi": "Bandung",
+    "telepon": "022-87654321",
+    "email": "contact@majubersama.com"
+  },
+  {
+    "id": 3,
+    "nama": "PT Sentosa Abadi",
+    "alamat": "Jl. Diponegoro No. 3, Surabaya",
+    "lokasi": "Surabaya",
+    "telepon": "031-23456789",
+    "email": "info@sentosaabadi.com"
+  },
+  {
+    "id": 4,
+    "nama": "PT Berkah Sejahtera",
+    "alamat": "Jl. Gajah Mada No. 4, Semarang",
+    "lokasi": "Semarang",
+    "telepon": "024-34567890",
+    "email": "info@berkahsejahtera.com"
+  },
+  {
+    "id": 5,
+    "nama": "CV Amanah Mulia",
+    "alamat": "Jl. Ahmad Yani No. 5, Medan",
+    "lokasi": "Medan",
+    "telepon": "061-45678901",
+    "email": "contact@amanahmulia.com"
+  },
+  {
+    "id": 6,
+    "nama": "PT Mandiri Utama",
+    "alamat": "Jl. Pemuda No. 6, Makassar",
+    "lokasi": "Makassar",
+    "telepon": "0411-56789012",
+    "email": "info@mandiriutama.com"
+  },
+  {
+    "id": 7,
+    "nama": "PT Cipta Karya",
+    "alamat": "Jl. Pahlawan No. 7, Palembang",
+    "lokasi": "Palembang",
+    "telepon": "0711-67890123",
+    "email": "info@ciptakarya.com"
+  },
+  {
+    "id": 8,
+    "nama": "CV Sinar Terang",
+    "alamat": "Jl. Dipatiukur No. 8, Bandung",
+    "lokasi": "Bandung",
+    "telepon": "022-78901234",
+    "email": "contact@sinarterang.com"
+  },
+  {
+    "id": 9,
+    "nama": "PT Bumi Persada",
+    "alamat": "Jl. Asia Afrika No. 9, Jakarta",
+    "lokasi": "Jakarta",
+    "telepon": "021-89012345",
+    "email": "info@bumipersada.com"
+  },
+  {
+    "id": 10,
+    "nama": "PT Surya Gemilang",
+    "alamat": "Jl. Sudirman No. 10, Surabaya",
+    "lokasi": "Surabaya",
+    "telepon": "031-90123456",
+    "email": "info@suryagemilang.com"
+  },
+  {
+    "id": 11,
+    "nama": "CV Karya Bersama",
+    "alamat": "Jl. Gatot Subroto No. 11, Medan",
+    "lokasi": "Medan",
+    "telepon": "061-12345679",
+    "email": "contact@karyabersama.com"
+  },
+  {
+    "id": 12,
+    "nama": "PT Mitra Sejati",
+    "alamat": "Jl. Ahmad Yani No. 12, Bandung",
+    "lokasi": "Bandung",
+    "telepon": "022-23456780",
+    "email": "info@mitrasejati.com"
+  },
+  {
+    "id": 13,
+    "nama": "PT Sumber Rejeki",
+    "alamat": "Jl. Pemuda No. 13, Semarang",
+    "lokasi": "Semarang",
+    "telepon": "024-34567881",
+    "email": "info@sumberrejeki.com"
+  },
+  {
+    "id": 14,
+    "nama": "CV Cahaya Baru",
+    "alamat": "Jl. Gajah Mada No. 14, Surabaya",
+    "lokasi": "Surabaya",
+    "telepon": "031-45678912",
+    "email": "contact@cahayabaru.com"
+  },
+  {
+    "id": 15,
+    "nama": "PT Anugerah Abadi",
+    "alamat": "Jl. Merdeka No. 15, Jakarta",
+    "lokasi": "Jakarta",
+    "telepon": "021-56789013",
+    "email": "info@anugerahabadi.com"
+  },
+  {
+    "id": 16,
+    "nama": "PT Makmur Sentosa",
+    "alamat": "Jl. Diponegoro No. 16, Makassar",
+    "lokasi": "Makassar",
+    "telepon": "0411-67890124",
+    "email": "info@makmursentosa.com"
+  },
+  {
+    "id": 17,
+    "nama": "CV Sukses Bersama",
+    "alamat": "Jl. Ahmad Yani No. 17, Palembang",
+    "lokasi": "Palembang",
+    "telepon": "0711-78901235",
+    "email": "contact@suksesbersama.com"
+  },
+  {
+    "id": 18,
+    "nama": "PT Jaya Abadi",
+    "alamat": "Jl. Sudirman No. 18, Bandung",
+    "lokasi": "Bandung",
+    "telepon": "022-89012346",
+    "email": "info@jayaabadi.com"
+  },
+  {
+    "id": 19,
+    "nama": "PT Sinar Mulia",
+    "alamat": "Jl. Pemuda No. 19, Jakarta",
+    "lokasi": "Jakarta",
+    "telepon": "021-90123457",
+    "email": "info@sinarmulia.com"
+  },
+  {
+    "id": 20,
+    "nama": "CV Berkah Jaya",
+    "alamat": "Jl. Gajah Mada No. 20, Surabaya",
+    "lokasi": "Surabaya",
+    "telepon": "031-12345680",
+    "email": "contact@berkahjaya.com"
+  },
+  {
+    "id": 21,
+    "nama": "PT Mandiri Sejahtera",
+    "alamat": "Jl. Merdeka No. 21, Medan",
+    "lokasi": "Medan",
+    "telepon": "061-23456781",
+    "email": "info@mandirisejahtera.com"
+  },
+  {
+    "id": 22,
+    "nama": "PT Karya Utama",
+    "alamat": "Jl. Diponegoro No. 22, Bandung",
+    "lokasi": "Bandung",
+    "telepon": "022-34567882",
+    "email": "info@karyautama.com"
+  },
+  {
+    "id": 23,
+    "nama": "CV Sumber Makmur",
+    "alamat": "Jl. Ahmad Yani No. 23, Semarang",
+    "lokasi": "Semarang",
+    "telepon": "024-45678913",
+    "email": "contact@sumbermakmur.com"
+  },
+  {
+    "id": 24,
+    "nama": "PT Cahaya Sejahtera",
+    "alamat": "Jl. Gajah Mada No. 24, Makassar",
+    "lokasi": "Makassar",
+    "telepon": "0411-56789025",
+    "email": "info@cahayasejahtera.com"
+  },
+  {
+    "id": 25,
+    "nama": "PT Sukses Bersama",
+    "alamat": "Jl. Pemuda No. 25, Palembang",
+    "lokasi": "Palembang",
+    "telepon": "0711-67890136",
+    "email": "info@suksesbersama.com"
+  },
+  {
+    "id": 26,
+    "nama": "CV Makmur Jaya",
+    "alamat": "Jl. Sudirman No. 26, Surabaya",
+    "lokasi": "Surabaya",
+    "telepon": "031-78901247",
+    "email": "contact@makmurjaya.com"
+  },
+  {
+    "id": 27,
+    "nama": "PT Berkah Mulia",
+    "alamat": "Jl. Merdeka No. 27, Jakarta",
+    "lokasi": "Jakarta",
+    "telepon": "021-89012348",
+    "email": "info@berkahmulia.com"
+  },
+  {
+    "id": 28,
+    "nama": "PT Sentosa Jaya",
+    "alamat": "Jl. Diponegoro No. 28, Bandung",
+    "lokasi": "Bandung",
+    "telepon": "022-90123459",
+    "email": "info@sentosajaya.com"
+  },
+  {
+    "id": 29,
+    "nama": "CV Anugerah Makmur",
+    "alamat": "Jl. Ahmad Yani No. 29, Semarang",
+    "lokasi": "Semarang",
+    "telepon": "024-12345681",
+    "email": "contact@anugerahmakmur.com"
+  },
+  {
+    "id": 30,
+    "nama": "PT Sinar Abadi",
+    "alamat": "Jl. Gajah Mada No. 30, Makassar",
+    "lokasi": "Makassar",
+    "telepon": "0411-23456782",
+    "email": "info@sinarabadi.com"
+  },
+  {
+    "id": 31,
+    "nama": "PT Jaya Sentosa",
+    "alamat": "Jl. Pemuda No. 31, Palembang",
+    "lokasi": "Palembang",
+    "telepon": "0711-34567883",
+    "email": "info@jayasentosa.com"
+  },
+  {
+    "id": 32,
+    "nama": "CV Mandiri Abadi",
+    "alamat": "Jl. Sudirman No. 32, Surabaya",
+    "lokasi": "Surabaya",
+    "telepon": "031-45678914",
+    "email": "contact@mandiriabadi.com"
+  },
+  {
+    "id": 33,
+    "nama": "PT Makmur Bersama",
+    "alamat": "Jl. Merdeka No. 33, Jakarta",
+    "lokasi": "Jakarta",
+    "telepon": "021-56789015",
+    "email": "info@makmurbersama.com"
+  },
+  {
+    "id": 34,
+    "nama": "PT Sukses Abadi",
+    "alamat": "Jl. Diponegoro No. 34, Bandung",
+    "lokasi": "Bandung",
+    "telepon": "022-67890126",
+    "email": "info@suksesabadi.com"
+  },
+  {
+    "id": 35,
+    "nama": "CV Berkah Sentosa",
+    "alamat": "Jl. Ahmad Yani No. 35, Semarang",
+    "lokasi": "Semarang",
+    "telepon": "024-78901248",
+    "email": "contact@berkahsentosa.com"
+  },
+  {
+    "id": 36,
+    "nama": "PT Cahaya Makmur",
+    "alamat": "Jl. Gajah Mada No. 36, Makassar",
+    "lokasi": "Makassar",
+    "telepon": "0411-89012349",
+    "email": "info@cahayamakmur.com"
+  },
+  {
+    "id": 37,
+    "nama": "PT Mandiri Jaya",
+    "alamat": "Jl. Pemuda No. 37, Palembang",
+    "lokasi": "Palembang",
+    "telepon": "0711-90123460",
+    "email": "info@mandirijaya.com"
+  },
+  {
+    "id": 38,
+    "nama": "CV Sinar Sejahtera",
+    "alamat": "Jl. Sudirman No. 38, Surabaya",
+    "lokasi": "Surabaya",
+    "telepon": "031-12345682",
+    "email": "contact@sinarsejahtera.com"
+  },
+  {
+    "id": 39,
+    "nama": "PT Karya Makmur",
+    "alamat": "Jl. Merdeka No. 39, Jakarta",
+    "lokasi": "Jakarta",
+    "telepon": "021-23456783",
+    "email": "info@karyamakmur.com"
+  },
+  {
+    "id": 40,
+    "nama": "PT Sukses Sentosa",
+    "alamat": "Jl. Diponegoro No. 40, Bandung",
+    "lokasi": "Bandung",
+    "telepon": "022-34567884",
+    "email": "info@suksessentosa.com"
+  },
+  {
+    "id": 41,
+    "nama": "CV Berkah Abadi",
+    "alamat": "Jl. Ahmad Yani No. 41, Semarang",
+    "lokasi": "Semarang",
+    "telepon": "024-45678915",
+    "email": "contact@berkahabadi.com"
+  },
+  {
+    "id": 42,
+    "nama": "PT Cahaya Bersama",
+    "alamat": "Jl. Gajah Mada No. 42, Makassar",
+    "lokasi": "Makassar",
+    "telepon": "0411-56789027",
+    "email": "info@cahayabersama.com"
+  },
+  {
+    "id": 43,
+    "nama": "PT Mandiri Makmur",
+    "alamat": "Jl. Pemuda No. 43, Palembang",
+    "lokasi": "Palembang",
+    "telepon": "0711-67890138",
+    "email": "info@mandirimakmur.com"
+  },
+  {
+    "id": 44,
+    "nama": "CV Sukses Sejahtera",
+    "alamat": "Jl. Sudirman No. 44, Surabaya",
+    "lokasi": "Surabaya",
+    "telepon": "031-78901249",
+    "email": "contact@suksessejahtera.com"
+  },
+  {
+    "id": 45,
+    "nama": "PT Berkah Jaya",
+    "alamat": "Jl. Merdeka No. 45, Jakarta",
+    "lokasi": "Jakarta",
+    "telepon": "021-89012350",
+    "email": "info@berkahjaya.com"
+  },
+  {
+    "id": 46,
+    "nama": "PT Sentosa Makmur",
+    "alamat": "Jl. Diponegoro No. 46, Bandung",
+    "lokasi": "Bandung",
+    "telepon": "022-90123461",
+    "email": "info@sentosamakmur.com"
+  },
+  {
+    "id": 47,
+    "nama": "CV Anugerah Sejahtera",
+    "alamat": "Jl. Ahmad Yani No. 47, Semarang",
+    "lokasi": "Semarang",
+    "telepon": "024-12345683",
+    "email": "contact@anugerahsejahtera.com"
+  },
+  {
+    "id": 48,
+    "nama": "PT Sinar Jaya",
+    "alamat": "Jl. Gajah Mada No. 48, Makassar",
+    "lokasi": "Makassar",
+    "telepon": "0411-23456784",
+    "email": "info@sinarjaya.com"
+  },
+  {
+    "id": 49,
+    "nama": "PT Jaya Makmur",
+    "alamat": "Jl. Pemuda No. 49, Palembang",
+    "lokasi": "Palembang",
+    "telepon": "0711-34567885",
+    "email": "info@jayamakmur.com"
+  },
+  {
+    "id": 50,
+    "nama": "CV Mandiri Sentosa",
+    "alamat": "Jl. Sudirman No. 50, Surabaya",
+    "lokasi": "Surabaya",
+    "telepon": "031-45678916",
+    "email": "contact@mandirisentosa.com"
+  }
+]

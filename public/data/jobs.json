@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "posisi": "Admin Toko Online",
+    "perusahaan": "SneakersX",
+    "lokasi": "Jakarta",
+    "deskripsi": "Mengelola pesanan, update produk, dan melayani chat pelanggan di toko online."
+  },
+  {
+    "id": 2,
+    "posisi": "Editor Konten",
+    "perusahaan": "SneakersX",
+    "lokasi": "Surabaya",
+    "deskripsi": "Membuat dan mengedit konten promosi produk sepatu untuk media sosial dan website."
+  },
+  {
+    "id": 3,
+    "posisi": "Staff Gudang",
+    "perusahaan": "SneakersX",
+    "lokasi": "Bandung",
+    "deskripsi": "Mengelola stok sepatu, pengepakan, dan pengiriman barang ke pelanggan."
+  },
+  {
+    "id": 4,
+    "posisi": "Staff Administrasi",
+    "perusahaan": "SneakersX",
+    "lokasi": "Medan",
+    "deskripsi": "Mengelola dokumen administrasi, laporan penjualan, dan data inventaris."
+  },
+  {
+    "id": 5,
+    "posisi": "Customer Service",
+    "perusahaan": "SneakersX",
+    "lokasi": "Makassar",
+    "deskripsi": "Menangani pertanyaan dan keluhan pelanggan terkait produk sepatu."
+  },
+  {
+    "id": 6,
+    "posisi": "Digital Marketing",
+    "perusahaan": "SneakersX",
+    "lokasi": "Semarang",
+    "deskripsi": "Membuat strategi pemasaran digital dan mengelola iklan online."
+  },
+  {
+    "id": 7,
+    "posisi": "Sales Executive",
+    "perusahaan": "SneakersX",
+    "lokasi": "Palembang",
+    "deskripsi": "Menjual produk sepatu dan membangun relasi dengan pelanggan."
+  },
+  {
+    "id": 8,
+    "posisi": "Desain Grafis",
+    "perusahaan": "SneakersX",
+    "lokasi": "Bekasi",
+    "deskripsi": "Membuat desain visual untuk promosi produk sepatu."
+  },
+  {
+    "id": 9,
+    "posisi": "Social Media Specialist",
+    "perusahaan": "SneakersX",
+    "lokasi": "Tangerang",
+    "deskripsi": "Mengelola akun media sosial dan meningkatkan engagement brand sepatu."
+  },
+  {
+    "id": 10,
+    "posisi": "Staff Keuangan",
+    "perusahaan": "SneakersX",
+    "lokasi": "Depok",
+    "deskripsi": "Mengelola transaksi keuangan dan membuat laporan keuangan perusahaan."
+  }
+]
