@@ -9,7 +9,7 @@ const LowonganKerja = React.lazy(() => import("./pages/LowonganKerja"));
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Customers = React.lazy(() => import("./pages/Customer"));
 const ErrorPage = React.lazy(() => import("./pages/ErrorPage"));
-const Karyawan = React.lazy(() => import("./pages/karyawan"));
+const Karyawan = React.lazy(() => import("./pages/Karyawan"));
 const Booking = React.lazy(() => import("./pages/Booking"));
 const Loading = React.lazy(() => import("./Components/Loading"));
 const Login = React.lazy(() => import("./auth/Login"));
