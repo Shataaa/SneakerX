@@ -20,7 +20,7 @@ export default function SidebarMenu() {
 
     const menus = [
         { to: "/", icon: <FaHome color={iconColor} />, label: "Dashboard" },
-        { to: "/karyawan", icon: <BiBarChart color={iconColor} />, label: "List Karyawan" },
+        { to: "/Karyawan", icon: <BiBarChart color={iconColor} />, label: "List Karyawan" },
         { to: "/Customer", icon: <MdRateReview color={iconColor} />, label: "Customer Review" },
         { to: "/Booking", icon: <MdRateReview color={iconColor} />, label: "Booking List" },
         { to: "/CompanyProfileList", icon: <MdRateReview color={iconColor} />, label: "Company Profile" },
