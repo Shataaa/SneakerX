@@ -1,6 +1,5 @@
 import { BiHelpCircle } from "react-icons/bi"; 
 import React from "react";
-import { BiHelpCircle } from "react-icons/bi";
 
 export default function SidebarFooter() {
     return (
