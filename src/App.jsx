@@ -19,6 +19,7 @@ const MainLayout = React.lazy(() => import("./layouts/MainLayouts"));
 const AuthLayout = React.lazy(() => import("./layouts/AuthLayouts"));
 const ProductDetail = React.lazy(() => import("./pages/ProductDetail"));
 const CompanyProfileDetail = React.lazy(() => import("./pages/CompanyProfileDetail"));
+const ArtikelNewsDetail = React.lazy(() => import("./pages/ArtikelNewsDetail"));
 
 function App() {
   const [count, setCount] = useState(0);
@@ -38,6 +39,7 @@ function App() {
           <Route path="/ArtikelNews" element={<ArtikelNews />} />
           <Route path="/produk/:id" element={<ProductDetail />} />
           <Route path="/company/:id" element={<CompanyProfileDetail />} />
+          <Route path="/artikel/:id" element={<ArtikelNewsDetail />} />
         </Route>
 
         <Route>

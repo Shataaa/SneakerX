@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function ArtikelNews() {
   const [articles, setArticles] = useState([]);
@@ -190,7 +191,14 @@ export default function ArtikelNews() {
                     className="w-16 h-16 object-cover rounded"
                   />
                 </td>
-                <td className="px-4 py-3 font-semibold w-48">{article.judul}</td>
+                <td className="px-4 py-3 font-semibold w-48">
+                  <Link
+                    to={`/artikel/${article.id}`}
+                    className="text-black hover:underline"
+                  >
+                    {article.judul}
+                  </Link>
+                </td>
                 <td className="px-4 py-3 w-32">{article.tanggal}</td>
                 <td className="px-4 py-3 break-words">{article.isi}</td>
                 <td className="px-4 py-3 flex gap-2">
