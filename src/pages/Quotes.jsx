@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Quotes() {
   const [quote, setQuote] = useState("");
 
   useEffect(() => {
-    fetch("https://api.adviceslip.com/advice")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.slip && data.slip.advice) {
-          setQuote(data.slip.advice);
+    axios
+      .get("https://api.adviceslip.com/advice")
+      .then((res) => {
+        if (res.data.slip && res.data.slip.advice) {
+          setQuote(res.data.slip.advice);
         }
       })
       .catch((err) => console.error("Error fetching quote:", err));
