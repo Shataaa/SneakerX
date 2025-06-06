@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import ProductForm from "../components/ProductForm";
-import ProductCard from "../components/ProductCard";
+import ProductForm from "../Components/ProductForm";
+import ProductCard from "../Components/ProductCard";
 
 export default function ManajemenProduk() {
   const [products, setProducts] = useState([]);
