@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function Quotes() {
-  const [quotes, setQuotes] = useState([]);
+  const [quote, setQuote] = useState([]);
 
   useEffect(() => {
     fetch("https://api.quotable.io/quotes?tags=leonardo-da-vinci")
