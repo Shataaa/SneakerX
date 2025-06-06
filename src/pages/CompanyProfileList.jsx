@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function CompanyProfileList() {
   const [companies, setCompanies] = useState([]);
@@ -52,7 +53,14 @@ export default function CompanyProfileList() {
           <tbody>
             {companies.map((company, idx) => (
               <tr key={company.id || idx} className="border-t hover:bg-gray-50">
-                <td className="px-4 py-3 text-gray-800 font-semibold">{company.nama || "-"}</td>
+                <td className="px-4 py-3 text-gray-800 font-semibold">
+                  <Link
+                    to={`/company/${company.id}`}
+                    className="text-black hover:underline"
+                  >
+                    {company.nama || "-"}
+                  </Link>
+                </td>
                 <td className="px-4 py-3 text-gray-800">{company.alamat || "-"}</td>
                 <td className="px-4 py-3 text-gray-800">{company.lokasi || "-"}</td>
                 <td className="px-4 py-3 text-gray-800">{company.telepon || "-"}</td>

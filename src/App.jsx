@@ -18,6 +18,7 @@ const Forgot = React.lazy(() => import("./auth/Forgot"));
 const MainLayout = React.lazy(() => import("./layouts/MainLayouts"));
 const AuthLayout = React.lazy(() => import("./layouts/AuthLayouts"));
 const ProductDetail = React.lazy(() => import("./pages/ProductDetail"));
+const CompanyProfileDetail = React.lazy(() => import("./pages/CompanyProfileDetail"));
 
 function App() {
   const [count, setCount] = useState(0);
@@ -36,6 +37,7 @@ function App() {
           <Route path="/ManajemenProduk" element={<ManajemenProduk />} />
           <Route path="/ArtikelNews" element={<ArtikelNews />} />
           <Route path="/produk/:id" element={<ProductDetail />} />
+          <Route path="/company/:id" element={<CompanyProfileDetail />} />
         </Route>
 
         <Route>
