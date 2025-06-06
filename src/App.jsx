@@ -20,6 +20,7 @@ const AuthLayout = React.lazy(() => import("./layouts/AuthLayouts"));
 const ProductDetail = React.lazy(() => import("./pages/ProductDetail"));
 const CompanyProfileDetail = React.lazy(() => import("./pages/CompanyProfileDetail"));
 const ArtikelNewsDetail = React.lazy(() => import("./pages/ArtikelNewsDetail"));
+const BookingDetail = React.lazy(() => import("./pages/BookingDetail"));
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,6 +34,7 @@ function App() {
           <Route path="/Karyawan" element={<Karyawan />} />
           <Route path="/customer" element={<Customers />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/booking/:index" element={<BookingDetail />} />
           <Route path="/CompanyProfileList" element={<CompanyProfileList />} />
           <Route path="/LowonganKerja" element={<LowonganKerja />} />
           <Route path="/ManajemenProduk" element={<ManajemenProduk />} />

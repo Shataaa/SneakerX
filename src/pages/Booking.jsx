@@ -1,5 +1,6 @@
 import PageHeader from "../Components/PageHeader";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Booking() {
   const [customers, setCustomers] = useState([]);
@@ -21,11 +22,15 @@ export default function Booking() {
       .catch((error) => console.error("Error fetching product data:", error));
   }, []);
 
-  // Simulasi data booking: Setiap pelanggan memesan beberapa produk secara acak
-  const getRandomProducts = () => {
-    const randomCount = Math.floor(Math.random() * 3) + 1; // Setiap pelanggan memesan 1-3 produk
-    const shuffledProducts = [...products].sort(() => 0.5 - Math.random());
-    return shuffledProducts.slice(0, randomCount);
+  // Fungsi untuk mengambil produk unik per customer (berdasarkan index/id)
+  const getProductsForCustomer = (index) => {
+    if (products.length === 0) return [];
+    // Ambil 3 produk berurutan mulai dari index, wrap jika lebih dari panjang array
+    const booked = [];
+    for (let i = 0; i < 3 && i < products.length; i++) {
+      booked.push(products[(index + i) % products.length]);
+    }
+    return booked;
   };
 
   return (
@@ -45,9 +50,9 @@ export default function Booking() {
           </thead>
           <tbody>
             {customers.map((customer, index) => {
-              const bookedProducts = getRandomProducts(); // Produk yang dibooking pelanggan
+              const bookedProducts = getProductsForCustomer(index); // Produk yang dibooking pelanggan
               const totalPrice = bookedProducts.reduce(
-                (sum, product) => sum + product.price,
+                (sum, product) => sum + (product.price || 0),
                 0
               ); // Hitung total harga
               return (
@@ -55,17 +60,24 @@ export default function Booking() {
                   {/* Nama, Email, dan Avatar */}
                   <td className="px-6 py-4 text-gray-800">
                     <div className="flex items-center space-x-4">
-                      <img
-                        src={customer.avatar}
-                        alt={customer.customerName}
-                        className="w-12 h-12 object-cover rounded-full"
-                      />
+                      {customer.avatar && (
+                        <img
+                          src={customer.avatar}
+                          alt={customer.customerName}
+                          className="w-12 h-12 object-cover rounded-full"
+                        />
+                      )}
                       <div>
                         <div className="font-semibold">
-                          {customer.customerName}
+                          <Link
+                            to={`/booking/${index}`}
+                            className="text-blue-600 hover:underline"
+                          >
+                            {customer.customerName || `Customer ${index + 1}`}
+                          </Link>
                         </div>
                         <div className="text-sm text-gray-500">
-                          {customer.email}
+                          {customer.email || ""}
                         </div>
                       </div>
                     </div>
@@ -85,7 +97,7 @@ export default function Booking() {
                             className="w-12 h-12 object-cover rounded-md"
                           />
                           <span>
-                            {product.name} - Rp{product.price.toLocaleString()}
+                            {product.name} - Rp{product.price?.toLocaleString()}
                           </span>
                         </li>
                       ))}
