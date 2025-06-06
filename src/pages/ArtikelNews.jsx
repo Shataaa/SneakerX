@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PageHeader from "../Components/PageHeader";
 
 export default function ArtikelNews() {
   const [articles, setArticles] = useState([]);
@@ -88,6 +89,7 @@ export default function ArtikelNews() {
 
   return (
     <div className="max-w-5xl mx-auto bg-white p-4 rounded shadow">
+      <PageHeader title="Dashboard" breadcrumb={["Artikel News"]}/>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">Daftar Artikel News</h2>
         <button

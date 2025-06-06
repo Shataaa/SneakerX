@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
+import PageHeader from "../Components/PageHeader";
 
 export default function LowonganKerja() {
   const [jobs, setJobs] = useState([]);
@@ -76,8 +77,7 @@ export default function LowonganKerja() {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Manajemen Lowongan Kerja</h2>
-
+      <PageHeader title="Dashboard" breadcrumb={["Manajemen Lowongan Kerja"]}/>
       {/* Button Tambah Lowongan */}
       {!showAddForm && (
         <button

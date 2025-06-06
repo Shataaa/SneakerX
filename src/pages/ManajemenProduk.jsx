@@ -3,6 +3,7 @@ import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ProductForm from "../Components/ProductForm";
 import ProductCard from "../Components/ProductCard";
+import PageHeader from "../Components/PageHeader";
 
 export default function ManajemenProduk() {
   const [products, setProducts] = useState([]);
@@ -74,7 +75,7 @@ export default function ManajemenProduk() {
 
   return (
     <div className="max-w-5xl mx-auto bg-white p-4 rounded shadow">
-      <h2 className="text-2xl font-bold mb-4">Daftar Produk</h2>
+      <PageHeader title="Dashboard" breadcrumb={["Manajemen Produk"]}/>
       {!showAddForm && (
         <button
           onClick={() => setShowAddForm(true)}

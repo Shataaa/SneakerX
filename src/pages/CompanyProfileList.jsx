@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PageHeader from "../Components/PageHeader";
 
 export default function CompanyProfileList() {
   const [companies, setCompanies] = useState([]);
@@ -39,6 +40,7 @@ export default function CompanyProfileList() {
   return (
     
       <div className="overflow-x-auto">
+        <PageHeader title="Dashboard" breadcrumb={["Company List"]}/>
         <table className="table-auto w-full border-collapse bg-white rounded-lg shadow-md">
           <thead>
             <tr className="text-left text-gray-500 text-sm uppercase tracking-wider">
