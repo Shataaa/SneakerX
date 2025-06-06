@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import ProductForm from "../Components/ProductForm";
 import ProductCard from "../Components/ProductCard";
 
@@ -8,16 +9,6 @@ export default function ManajemenProduk() {
   const [loading, setLoading] = useState(true);
   const [showAddForm, setShowAddForm] = useState(false);
   const [newProduct, setNewProduct] = useState({
-    name: "",
-    brand: "",
-    price: "",
-    category: "",
-    image: "",
-    description: "",
-    stock: "",
-  });
-  const [editingProduct, setEditingProduct] = useState(null);
-  const [editFormData, setEditFormData] = useState({
     name: "",
     brand: "",
     price: "",
@@ -73,48 +64,6 @@ export default function ManajemenProduk() {
     }
   };
 
-  // Edit produk
-  const handleEdit = (product) => {
-    setEditingProduct(product.id);
-    setEditFormData({
-      name: product.name || "",
-      brand: product.brand || "",
-      price: product.price || "",
-      category: product.category || "",
-      image: product.image || "",
-      description: product.description || "",
-      stock: product.stock || "",
-    });
-  };
-  const handleEditChange = (e) => {
-    const { name, value } = e.target;
-    setEditFormData((prev) => ({ ...prev, [name]: value }));
-  };
-  const handleSaveEdit = () => {
-    setProducts((prev) =>
-      prev.map((product) =>
-        product.id === editingProduct
-          ? {
-              ...product,
-              ...editFormData,
-              price: Number(editFormData.price),
-              stock: Number(editFormData.stock),
-            }
-          : product
-      )
-    );
-    setEditingProduct(null);
-    setEditFormData({
-      name: "",
-      brand: "",
-      price: "",
-      category: "",
-      image: "",
-      description: "",
-      stock: "",
-    });
-  };
-
   if (loading) {
     return (
       <div className="max-w-4xl mx-auto bg-white p-4 rounded shadow text-center">
@@ -147,14 +96,18 @@ export default function ManajemenProduk() {
         {products.map((product) => (
           <ProductCard
             key={product.id}
-            product={product}
-            onEdit={handleEdit}
+            product={{
+              ...product,
+              name: (
+                <Link
+                  to={`/produk/${product.id}`}
+                  className="text-black hover:underline"
+                >
+                  {product.name}
+                </Link>
+              ),
+            }}
             onDelete={handleDelete}
-            isEditing={editingProduct === product.id}
-            editForm={editFormData}
-            onEditChange={handleEditChange}
-            onEditSave={handleSaveEdit}
-            onEditCancel={() => setEditingProduct(null)}
           />
         ))}
       </div>
