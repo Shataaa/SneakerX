@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Components/Header";
 import Sidebar from "../Components/Sidebar";
+import Quotes from "../pages/Quotes";
 
 export default function MainLayout() {
   return (
@@ -10,6 +11,7 @@ export default function MainLayout() {
           <Sidebar />
           <div id="main-content" className="flex-1 p-4">
             <Header />
+            <Quotes/>
             <Outlet />
           </div>
         </div>

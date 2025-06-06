@@ -1,7 +1,6 @@
 import PageHeader from "../Components/PageHeader";
 import React, { useState, useEffect } from "react";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa"; // Import ikon Edit, Delete, dan Add
-import Quotes from "./Quotes";
 
 export default function Karyawan() {
   const [employees, setEmployees] = useState([]);
@@ -79,7 +78,6 @@ export default function Karyawan() {
   return (
     <div className="p-4">
       <PageHeader title="Dashboard" breadcrumb={["List Karyawan"]} />
-      <Quotes/>
       {!showAddForm && (
         <button
           onClick={() => setShowAddForm(true)}
