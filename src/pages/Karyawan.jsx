@@ -1,7 +1,7 @@
 import PageHeader from "../Components/PageHeader";
 import React, { useState, useEffect } from "react";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa"; // Import ikon Edit, Delete, dan Add
-import Quotes from "../Quotes";
+import Quotes from "./Quotes";
 
 export default function Karyawan() {
   const [employees, setEmployees] = useState([]);
