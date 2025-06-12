@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = "​https://jboaqwdcfkvttqnkaabh.supabase.co/rest/v1/UserRole"
+const API_URL = "https://jboaqwdcfkvttqnkaabh.supabase.co/rest/v1/UserRole"
 const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impib2Fxd2RjZmt2dHRxbmthYWJoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk2NDk0NjIsImV4cCI6MjA2NTIyNTQ2Mn0.MXJLKqTVfq_jocKFPum6sNKSuxIL7n9WYKm3XdWIoOE"
 
 const headers = {
@@ -16,8 +16,8 @@ export const UserRoleAPI = {
     },
 
     async createUserRole(data) {
-        const response = await axios.post(API_URL, data, { headers })
-        return response.data
+        const response = await axios.post(API_URL, data, { headers });
+        return response.data;
     },
 
     async deleteUserRole(id) {
