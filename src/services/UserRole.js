@@ -18,5 +18,23 @@ export const UserRoleAPI = {
     async createUserRole(data) {
         const response = await axios.post(API_URL, data, { headers })
         return response.data
-    }
+    },
+
+    async deleteUserRole(id) {
+        await axios.delete(`${API_URL}?id=eq.${id}`, { headers })
+    },
+
+    async updateUserRole(id, data) {
+        const response = await axios.patch(
+            `${API_URL}?id=eq.${id}`,
+            data,
+            {
+                headers: {
+                    ...headers,
+                    Prefer: "return=representation"
+                }
+            }
+        );
+        return response.data;
+    },
 }

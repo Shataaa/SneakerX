@@ -18,5 +18,23 @@ export const KontakAPI = {
     async createKontak(data) {
         const response = await axios.post(API_URL, data, { headers })
         return response.data
-    }
+    },
+
+    async deleteKontak(id) {
+        await axios.delete(`${API_URL}?id=eq.${id}`, { headers })
+    },
+
+    async updateKontak(id, data) {
+        const response = await axios.patch(
+            `${API_URL}?id=eq.${id}`,
+            data,
+            {
+                headers: {
+                    ...headers,
+                    Prefer: "return=representation"
+                }
+            }
+        );
+        return response.data;
+    },
 }
