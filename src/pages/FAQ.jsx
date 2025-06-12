@@ -123,7 +123,7 @@ export default function FAQ() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
+    <div className="max-w-6xl w-full mx-auto p-6">
       <div className="mb-6">
         <h2 className="text-3xl font-bold text-gray-800 mb-2">FAQ App</h2>
       </div>
@@ -191,66 +191,68 @@ export default function FAQ() {
       </div>
 
       {/* Notes Table & State */}
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden mt-10">
-        <div className="px-6 py-4 ">
-          <h3 className="text-lg font-semibold">
-            Daftar FAQ ({faqs.length})
-          </h3>
+      <div className="bg-white rounded-2xl shadow-lg overflow-x-auto mt-10">
+        <div className="w-full">
+          <div className="px-6 py-4 ">
+            <h3 className="text-lg font-semibold">
+              Daftar FAQ ({faqs.length})
+            </h3>
+          </div>
+
+          {loading && <LoadingSpinner text="Memuat FAQ..." />}
+
+          {!loading && faqs.length === 0 && !error && (
+            <EmptyState text="Belum ada FAQ. Tambah FAQ pertama!" />
+          )}
+
+          {!loading && faqs.length === 0 && error && (
+            <EmptyState text="Terjadi Kesalahan. Coba lagi nanti." />
+          )}
+
+          {!loading && faqs.length > 0 ? (
+            <GenericTable
+              columns={["#", "Pertanyaan", "Jawaban", "Aksi"]}
+              data={faqs}
+              renderRow={(faq, index) => (
+                <>
+                  <td className="px-6 py-4 font-medium text-gray-700">
+                    {index + 1}.
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="font-semibold text-emerald-600">
+                      {faq.title}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 break-words">
+                    <div className="text-gray-600">
+                      {faq.jawaban}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 max-w-xs">
+                    <div className="flex gap-2 items-center">
+                      <button
+                        onClick={() => handleEdit(faq)}
+                        disabled={loading}
+                        className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
+                        title="Edit"
+                      >
+                        <AiFillEdit className="text-2xl text-yellow-500" />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(faq.id)}
+                        disabled={loading}
+                        className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
+                        title="Hapus"
+                      >
+                        <AiFillDelete className="text-2xl text-red-500" />
+                      </button>
+                    </div>
+                  </td>
+                </>
+              )}
+            />
+          ) : null}
         </div>
-
-        {loading && <LoadingSpinner text="Memuat FAQ..." />}
-
-        {!loading && faqs.length === 0 && !error && (
-          <EmptyState text="Belum ada FAQ. Tambah FAQ pertama!" />
-        )}
-
-        {!loading && faqs.length === 0 && error && (
-          <EmptyState text="Terjadi Kesalahan. Coba lagi nanti." />
-        )}
-
-        {!loading && faqs.length > 0 ? (
-          <GenericTable
-            columns={["#", "Pertanyaan", "Jawaban", "Aksi"]}
-            data={faqs}
-            renderRow={(faq, index) => (
-              <>
-                <td className="px-6 py-4 font-medium text-gray-700">
-                  {index + 1}.
-                </td>
-                <td className="px-6 py-4">
-                  <div className="font-semibold text-emerald-600">
-                    {faq.title}
-                  </div>
-                </td>
-                <td className="px-6 py-4 max-w-xs">
-                  <div className="truncate text-gray-600">
-                    {faq.jawaban}
-                  </div>
-                </td>
-                <td className="px-6 py-4 max-w-xs">
-                  <div className="flex gap-2 items-center">
-                    <button
-                      onClick={() => handleEdit(faq)}
-                      disabled={loading}
-                      className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
-                      title="Edit"
-                    >
-                      <AiFillEdit className="text-2xl text-yellow-500" />
-                    </button>
-                    <button
-                      onClick={() => handleDelete(faq.id)}
-                      disabled={loading}
-                      className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
-                      title="Hapus"
-                    >
-                      <AiFillDelete className="text-2xl text-red-500" />
-                    </button>
-                  </div>
-                </td>
-              </>
-            )}
-          />
-        ) : null}
       </div>
     </div>
   );

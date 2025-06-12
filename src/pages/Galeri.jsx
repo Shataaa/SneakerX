@@ -122,7 +122,7 @@ export default function Galeri() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
+    <div className="max-w-6xl w-full mx-auto p-6"> {/* Ubah max-w-2xl ke max-w-6xl dan tambah w-full */}
       <div className="mb-6">
         <h2 className="text-3xl font-bold text-gray-800 mb-2">Galeri App</h2>
       </div>
@@ -202,71 +202,73 @@ export default function Galeri() {
       </div>
 
       {/* Galeri Table & State */}
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden mt-10">
-        <div className="px-6 py-4 ">
-          <h3 className="text-lg font-semibold">
-            Daftar Galeri ({galeri.length})
-          </h3>
+      <div className="bg-white rounded-2xl shadow-lg overflow-x-auto mt-10">
+        <div className="w-full">
+          <div className="px-6 py-4 ">
+            <h3 className="text-lg font-semibold">
+              Daftar Galeri ({galeri.length})
+            </h3>
+          </div>
+
+          {loading && <LoadingSpinner text="Memuat galeri..." />}
+
+          {!loading && galeri.length === 0 && !error && (
+            <EmptyState text="Belum ada galeri. Tambah galeri pertama!" />
+          )}
+
+          {!loading && galeri.length === 0 && error && (
+            <EmptyState text="Terjadi Kesalahan. Coba lagi nanti." />
+          )}
+
+          {!loading && galeri.length > 0 ? (
+            <GenericTable
+              columns={["#", "Judul", "Gambar", "Video", "Aksi"]}
+              data={galeri}
+              renderRow={(item, index) => (
+                <>
+                  <td className="px-6 py-4 font-medium text-gray-700">
+                    {index + 1}.
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="font-semibold text-emerald-600">
+                      {item.title}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 max-w-xs">
+                    <div className="truncate text-gray-600">
+                      <a href={item.gambar} target="_blank" rel="noopener noreferrer">{item.gambar}</a>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 max-w-xs">
+                    <div className="truncate text-gray-600">
+                      <a href={item.video} target="_blank" rel="noopener noreferrer">{item.video}</a>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 max-w-xs">
+                    <div className="flex gap-2 items-center">
+                      <button
+                        onClick={() => handleEdit(item)}
+                        disabled={loading}
+                        className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
+                        title="Edit"
+                      >
+                        <AiFillEdit className="text-2xl text-yellow-500" />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(item.id)}
+                        disabled={loading}
+                        className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
+                        title="Hapus"
+                      >
+                        <AiFillDelete className="text-2xl text-red-500" />
+                      </button>
+                    </div>
+                  </td>
+                </>
+              )}
+            />
+          ) : null}
         </div>
-
-        {loading && <LoadingSpinner text="Memuat galeri..." />}
-
-        {!loading && galeri.length === 0 && !error && (
-          <EmptyState text="Belum ada galeri. Tambah galeri pertama!" />
-        )}
-
-        {!loading && galeri.length === 0 && error && (
-          <EmptyState text="Terjadi Kesalahan. Coba lagi nanti." />
-        )}
-
-        {!loading && galeri.length > 0 ? (
-          <GenericTable
-            columns={["#", "Judul", "Gambar", "Video", "Aksi"]}
-            data={galeri}
-            renderRow={(item, index) => (
-              <>
-                <td className="px-6 py-4 font-medium text-gray-700">
-                  {index + 1}.
-                </td>
-                <td className="px-6 py-4">
-                  <div className="font-semibold text-emerald-600">
-                    {item.title}
-                  </div>
-                </td>
-                <td className="px-6 py-4 max-w-xs">
-                  <div className="truncate text-gray-600">
-                    <a href={item.gambar} target="_blank" rel="noopener noreferrer">{item.gambar}</a>
-                  </div>
-                </td>
-                <td className="px-6 py-4 max-w-xs">
-                  <div className="truncate text-gray-600">
-                    <a href={item.video} target="_blank" rel="noopener noreferrer">{item.video}</a>
-                  </div>
-                </td>
-                <td className="px-6 py-4 max-w-xs">
-                  <div className="flex gap-2 items-center">
-                    <button
-                      onClick={() => handleEdit(item)}
-                      disabled={loading}
-                      className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
-                      title="Edit"
-                    >
-                      <AiFillEdit className="text-2xl text-yellow-500" />
-                    </button>
-                    <button
-                      onClick={() => handleDelete(item.id)}
-                      disabled={loading}
-                      className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
-                      title="Hapus"
-                    >
-                      <AiFillDelete className="text-2xl text-red-500" />
-                    </button>
-                  </div>
-                </td>
-              </>
-            )}
-          />
-        ) : null}
       </div>
     </div>
   );

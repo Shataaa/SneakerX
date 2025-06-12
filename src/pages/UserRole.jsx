@@ -128,7 +128,7 @@ export default function UserRole() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
+    <div className="max-w-6xl w-full mx-auto p-6"> {/* Ubah max-w-2xl ke max-w-6xl */}
       <div className="mb-6">
         <h2 className="text-3xl font-bold text-gray-800 mb-2">User Role App</h2>
       </div>
@@ -137,7 +137,7 @@ export default function UserRole() {
       {success && <AlertBox type="success">{success}</AlertBox>}
 
       {/* Form Card */}
-      <div className="bg-white rounded-2xl shadow-lg p-6">
+      <div className="bg-white rounded-2xl shadow-lg p-6 mb-10">
         <h3 className="text-lg font-semibold text-gray-800 mb-4">
           Tambah User Baru
         </h3>
@@ -227,7 +227,7 @@ export default function UserRole() {
       </div>
 
       {/* User Role Table & State */}
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden mt-10">
+      <div className="bg-white rounded-2xl shadow-lg overflow-x-auto">
         <div className="px-6 py-4 ">
           <h3 className="text-lg font-semibold">
             Daftar User ({userRole.length})
@@ -245,52 +245,54 @@ export default function UserRole() {
         )}
 
         {!loading && userRole.length > 0 ? (
-          <GenericTable
-            columns={[
-              "#",
-              "Nama",
-              "Email",
-              "Password",
-              "Role",
-              "Status User",
-              "Created At",
-              "Aksi",
-            ]}
-            data={userRole}
-            renderRow={(item, index) => (
-              <>
-                <td className="px-6 py-4 font-medium text-gray-700">
-                  {index + 1}.
-                </td>
-                <td className="px-6 py-4">{item.nama}</td>
-                <td className="px-6 py-4">{item.email}</td>
-                <td className="px-6 py-4">{item.password}</td>
-                <td className="px-6 py-4">{item.role}</td>
-                <td className="px-6 py-4">{item["status user"]}</td>
-                <td className="px-6 py-4">{item.created_at}</td>
-                <td className="px-6 py-4">
-                  <div className="flex gap-2 items-center">
-                    <button
-                      onClick={() => handleEdit(item)}
-                      disabled={loading}
-                      className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
-                      title="Edit"
-                    >
-                      <AiFillEdit className="text-2xl text-yellow-500" />
-                    </button>
-                    <button
-                      onClick={() => handleDelete(item.id)}
-                      disabled={loading}
-                      className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
-                      title="Hapus"
-                    >
-                      <AiFillDelete className="text-2xl text-red-500" />
-                    </button>
-                  </div>
-                </td>
-              </>
-            )}
-          />
+          <div className="w-full"> {/* Ubah min-w-[900px] ke w-full */}
+            <GenericTable
+              columns={[
+                "#",
+                "Nama",
+                "Email",
+                "Password",
+                "Role",
+                "Status User",
+                "Created At",
+                "Aksi",
+              ]}
+              data={userRole}
+              renderRow={(item, index) => (
+                <>
+                  <td className="px-6 py-4 font-medium text-gray-700">
+                    {index + 1}.
+                  </td>
+                  <td className="px-6 py-4">{item.nama}</td>
+                  <td className="px-6 py-4">{item.email}</td>
+                  <td className="px-6 py-4">{item.password}</td>
+                  <td className="px-6 py-4">{item.role}</td>
+                  <td className="px-6 py-4">{item["status user"]}</td>
+                  <td className="px-6 py-4">{item.created_at}</td>
+                  <td className="px-6 py-4">
+                    <div className="flex gap-2 items-center">
+                      <button
+                        onClick={() => handleEdit(item)}
+                        disabled={loading}
+                        className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
+                        title="Edit"
+                      >
+                        <AiFillEdit className="text-2xl text-yellow-500" />
+                      </button>
+                      <button
+                        onClick={() => handleDelete(item.id)}
+                        disabled={loading}
+                        className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
+                        title="Hapus"
+                      >
+                        <AiFillDelete className="text-2xl text-red-500" />
+                      </button>
+                    </div>
+                  </td>
+                </>
+              )}
+            />
+          </div>
         ) : null}
       </div>
     </div>
