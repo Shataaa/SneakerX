@@ -77,7 +77,7 @@ export default function LowonganKerja() {
 
   return (
     <div className="p-4">
-      <PageHeader title="Dashboard" breadcrumb={["Manajemen Lowongan Kerja"]}/>
+      <PageHeader title="Dashboard" breadcrumb={["Manajemen Lowongan Kerja"]} />
       {/* Button Tambah Lowongan */}
       {!showAddForm && (
         <button
@@ -91,7 +91,7 @@ export default function LowonganKerja() {
 
       {/* Form Tambah Lowongan */}
       {showAddForm && (
-        <div className="mb-6 p-4 bg-gray-100 rounded-lg shadow-md">
+        <div className="mb-6 p-4 text-gray-700 border-b border-gray-200">
           <h3 className="text-xl font-semibold mb-4">Tambah Lowongan</h3>
           <div className="mb-4">
             <label className="block text-gray-700">Posisi</label>
@@ -151,9 +151,9 @@ export default function LowonganKerja() {
 
       {/* Jobs Table */}
       <div className="overflow-x-auto">
-        <table className="table-auto w-full border-collapse bg-white rounded-lg shadow-md">
+        <table className="table-auto w-full border-collapse bg-white rounded-lg shadow-md ">
           <thead>
-            <tr className="text-left text-gray-500 text-sm uppercase tracking-wider">
+            <tr className="text-left text-gray-700 border-b border-gray-200 text-sm uppercase tracking-wider">
               <th className="px-6 py-3">Posisi</th>
               <th className="px-6 py-3">Perusahaan</th>
               <th className="px-6 py-3">Lokasi</th>
@@ -165,27 +165,35 @@ export default function LowonganKerja() {
             {jobs.map((job) => (
               <React.Fragment key={job.id}>
                 <tr className="border-t hover:bg-gray-50">
-                  <td className="px-6 py-4 text-gray-800 font-semibold">
+                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
                     {job.posisi}
                   </td>
-                  <td className="px-6 py-4 text-gray-800">{job.perusahaan}</td>
-                  <td className="px-6 py-4 text-gray-800">{job.lokasi}</td>
-                  <td className="px-6 py-4 text-gray-800">{job.deskripsi}</td>
-                  <td className="px-6 py-4 flex space-x-2">
-                    <button
-                      onClick={() => handleEdit(job)}
-                      className="bg-yellow-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-yellow-600"
-                    >
-                      <FaEdit />
-                      <span>Edit</span>
-                    </button>
-                    <button
-                      onClick={() => handleDelete(job.id)}
-                      className="bg-red-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-red-600"
-                    >
-                      <FaTrash />
-                      <span>Delete</span>
-                    </button>
+                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                    {job.perusahaan}
+                  </td>
+                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                    {job.lokasi}
+                  </td>
+                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                    {job.deskripsi}
+                  </td>
+                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                    <div className="flex flex-col space-y-2">
+                      <button
+                        onClick={() => handleDelete(job.id)}
+                        className="w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                      >
+                        <FaTrash />
+                        <span>Delete</span>
+                      </button>
+                      <button
+                        onClick={() => handleEdit(job)}
+                        className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                      >
+                        <FaEdit />
+                        <span>Edit</span>
+                      </button>
+                    </div>
                   </td>
                 </tr>
                 {/* Edit Form */}
@@ -207,7 +215,9 @@ export default function LowonganKerja() {
                           />
                         </div>
                         <div className="mb-4">
-                          <label className="block text-gray-700">Perusahaan</label>
+                          <label className="block text-gray-700">
+                            Perusahaan
+                          </label>
                           <input
                             type="text"
                             name="perusahaan"
@@ -227,7 +237,9 @@ export default function LowonganKerja() {
                           />
                         </div>
                         <div className="mb-4">
-                          <label className="block text-gray-700">Deskripsi</label>
+                          <label className="block text-gray-700">
+                            Deskripsi
+                          </label>
                           <textarea
                             name="deskripsi"
                             value={editFormData.deskripsi}

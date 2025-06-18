@@ -1,6 +1,7 @@
 import PageHeader from "../Components/PageHeader";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaTrash, FaPen } from "react-icons/fa";
 
 export default function Booking() {
   const [customers, setCustomers] = useState([]);
@@ -33,6 +34,16 @@ export default function Booking() {
     return booked;
   };
 
+  const handleDelete = (id) => {
+    // Logika untuk menghapus data booking
+    console.log("Delete booking with id:", id);
+  };
+
+  const handleReply = (id) => {
+    // Logika untuk membalas atau mengedit data booking
+    console.log("Reply to booking with id:", id);
+  };
+
   return (
     <div className="p-4">
       {/* PageHeader */}
@@ -40,12 +51,21 @@ export default function Booking() {
 
       {/* Booking Table */}
       <div className="overflow-x-auto">
-        <table className="table-auto w-full border-collapse bg-white rounded-lg shadow-md">
+        <table className="min-w-full bg-white">
           <thead>
-            <tr className="text-left text-gray-500 text-sm uppercase tracking-wider">
-              <th className="px-6 py-3">Nama</th>
-              <th className="px-6 py-3">Produk yang Dibooking</th>
-              <th className="px-6 py-3">Total Harga</th>
+            <tr>
+              <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                Produk
+              </th>
+              <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                Harga
+              </th>
+              <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                Jumlah
+              </th>
+              <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -58,7 +78,7 @@ export default function Booking() {
               return (
                 <tr key={index} className="border-t hover:bg-gray-50">
                   {/* Nama, Email, dan Avatar */}
-                  <td className="px-6 py-4 text-gray-800">
+                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
                     <div className="flex items-center space-x-4">
                       {customer.avatar && (
                         <img
@@ -84,7 +104,7 @@ export default function Booking() {
                   </td>
 
                   {/* Produk yang Dibooking (Nama + Gambar) */}
-                  <td className="px-6 py-4 text-gray-800">
+                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
                     <ul className="space-y-2">
                       {bookedProducts.map((product) => (
                         <li
@@ -105,8 +125,28 @@ export default function Booking() {
                   </td>
 
                   {/* Total Harga */}
-                  <td className="px-6 py-4 text-gray-800 font-semibold">
+                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
                     Rp{totalPrice.toLocaleString()}
+                  </td>
+
+                  {/* Action Buttons */}
+                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                    <div className="flex flex-col space-y-2">
+                      <button
+                        onClick={() => handleDelete(customer.id)}
+                        className="w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                      >
+                        <FaTrash />
+                        <span>Delete</span>
+                      </button>
+                      <button
+                        onClick={() => handleReply(customer.id)}
+                        className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                      >
+                        <FaPen />
+                        <span>Reply</span>
+                      </button>
+                    </div>
                   </td>
                 </tr>
               );

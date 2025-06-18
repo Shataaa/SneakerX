@@ -49,13 +49,21 @@ export default function Customer() {
 
       {/* Customer Table */}
       <div className="overflow-x-auto">
-        <table className="table-auto w-full border-collapse bg-white rounded-lg shadow-md">
+        <table className="min-w-full bg-white">
           <thead>
-            <tr className="text-left text-gray-500 text-sm uppercase tracking-wider">
-              <th className="px-6 py-3">Nama</th>
-              <th className="px-6 py-3">Status</th>
-              <th className="px-6 py-3">Review</th>
-              <th className="px-6 py-3">Action</th>
+            <tr>
+              <th className="px-6 py-4 text-left font-bold text-gray-400 border-b border-gray-200">
+                NAMA
+              </th>
+              <th className="px-6 py-4 text-left font-bold text-gray-400 border-b border-gray-200">
+                STATUS
+              </th>
+              <th className="px-6 py-4 text-left font-bold text-gray-400 border-b border-gray-200">
+                REVIEW
+              </th>
+              <th className="px-6 py-4 text-left font-bold text-gray-400 border-b border-gray-200">
+                ACTION
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -63,8 +71,8 @@ export default function Customer() {
               <React.Fragment key={index}>
                 <tr className="border-t hover:bg-gray-50">
                   {/* Nama dan Avatar */}
-                  <td className="px-6 py-4 text-gray-800">
-                    <div className="flex items-center space-x-4">
+                  <td className="px-6 py-4 text-gray-800 border-b border-gray-200">
+                    <div className="flex items-center gap-3">
                       {/* Avatar */}
                       <img
                         src={customer.avatar}
@@ -73,10 +81,10 @@ export default function Customer() {
                       />
                       {/* Nama dan Email */}
                       <div>
-                        <div className="font-semibold">
+                        <div className="font-bold text-gray-800">
                           {customer.customerName}
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="text-gray-400 text-sm">
                           {customer.email}
                         </div>
                       </div>
@@ -84,37 +92,41 @@ export default function Customer() {
                   </td>
 
                   {/* Status */}
-                  <td className="px-6 py-4">
-                    <span
-                      className={`px-3 py-1 rounded-full text-white ${
-                        customer.status === "Online"
-                          ? "bg-green-500"
-                          : "bg-red-500"
-                      }`}
-                    >
-                      {customer.status}
-                    </span>
+                  <td className="px-6 py-4 border-b border-gray-200">
+                    {customer.status === "Online" ? (
+                      <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Online
+                      </span>
+                    ) : (
+                      <span className="bg-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Offline
+                      </span>
+                    )}
                   </td>
 
                   {/* Review */}
-                  <td className="px-6 py-4 text-gray-800">{customer.review}</td>
+                  <td className="px-6 py-4 border-b border-gray-200">
+                    {customer.review}
+                  </td>
 
                   {/* Action */}
-                  <td className="px-6 py-4 flex space-x-2">
-                    <button
-                      onClick={() => handleDelete(customer.customerId)}
-                      className="bg-red-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-red-600"
-                    >
-                      <FaTrash />
-                      <span>Delete</span>
-                    </button>
-                    <button
-                      onClick={() => handleReply(customer.customerId)}
-                      className="bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-600"
-                    >
-                      <FaPen />
-                      <span>Reply</span>
-                    </button>
+                  <td className="px-6 py-4 border-b border-gray-200">
+                    <div className="flex flex-col space-y-2">
+                      <button
+                        onClick={() => handleDelete(customer.customerId)}
+                        className="w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                      >
+                        <FaTrash />
+                        <span>Delete</span>
+                      </button>
+                      <button
+                        onClick={() => handleReply(customer.customerId)}
+                        className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                      >
+                        <FaPen />
+                        <span>Reply</span>
+                      </button>
+                    </div>
                   </td>
                 </tr>
 
@@ -128,7 +140,7 @@ export default function Customer() {
                           value={replyText}
                           onChange={(e) => setReplyText(e.target.value)}
                           placeholder="Type your reply here..."
-                          className="w-full border border-gray-300 p-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full border border-gray-200 p-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
                         />
                         <button
                           onClick={() => handleSendReply(customer.customerId)}

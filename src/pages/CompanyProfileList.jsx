@@ -38,55 +38,76 @@ export default function CompanyProfileList() {
   }
 
   return (
-    
-      <div className="overflow-x-auto">
-        <PageHeader title="Dashboard" breadcrumb={["Company List"]}/>
-        <table className="table-auto w-full border-collapse bg-white rounded-lg shadow-md">
-          <thead>
-            <tr className="text-left text-gray-500 text-sm uppercase tracking-wider">
-              <th className="px-4 py-3">Nama</th>
-              <th className="px-4 py-3">Alamat</th>
-              <th className="px-4 py-3">Lokasi</th>
-              <th className="px-4 py-3">Telepon</th>
-              <th className="px-4 py-3">Email</th>
-              <th className="px-4 py-3">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {companies.map((company, idx) => (
-              <tr key={company.id || idx} className="border-t hover:bg-gray-50">
-                <td className="px-4 py-3 text-gray-800 font-semibold">
-                  <Link
-                    to={`/company/${company.id}`}
-                    className="text-black hover:underline"
-                  >
-                    {company.nama || "-"}
-                  </Link>
-                </td>
-                <td className="px-4 py-3 text-gray-800">{company.alamat || "-"}</td>
-                <td className="px-4 py-3 text-gray-800">{company.lokasi || "-"}</td>
-                <td className="px-4 py-3 text-gray-800">{company.telepon || "-"}</td>
-                <td className="px-4 py-3 text-gray-800">{company.email}</td>
-                <td className="px-4 py-3 flex space-x-2">
-                  <button
-                    onClick={() => handleEdit(company)}
-                    className="bg-yellow-500 text-white px-3 py-2 rounded-lg flex items-center space-x-2 hover:bg-yellow-600 text-sm"
-                  >
-                    <FaEdit />
-                    <span>Edit</span>
-                  </button>
+    <div className="overflow-x-auto">
+      <PageHeader title="Dashboard" breadcrumb={["Company List"]} />
+      <table className="min-w-full bg-white">
+        <thead>
+          <tr>
+            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+              Nama
+            </th>
+            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+              Alamat
+            </th>
+            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+              Lokasi
+            </th>
+            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+              Telepon
+            </th>
+            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+              Email
+            </th>
+            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {companies.map((company, idx) => (
+            <tr key={company.id || idx} className="border-t hover:bg-gray-50">
+              <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                <Link
+                  to={`/company/${company.id}`}
+                  className="text-black hover:underline"
+                >
+                  {company.nama || "-"}
+                </Link>
+              </td>
+              <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                {company.alamat || "-"}
+              </td>
+              <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                {company.lokasi || "-"}
+              </td>
+              <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                {company.telepon || "-"}
+              </td>
+              <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                {company.email}
+              </td>
+              <td className="px-6 py-4 border-b border-gray-200">
+                <div className="flex flex-col space-y-2">
                   <button
                     onClick={() => handleDelete(company.id ? company.id : idx)}
-                    className="bg-red-500 text-white px-3 py-2 rounded-lg flex items-center space-x-2 hover:bg-red-600 text-sm"
+                    className="w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
                   >
                     <FaTrash />
                     <span>Delete</span>
                   </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                  <button
+                    onClick={() => handleEdit(company)}
+                    className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                  >
+                    <FaEdit />
+                    <span>Edit</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }

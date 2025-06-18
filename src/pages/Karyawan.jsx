@@ -141,13 +141,13 @@ export default function Karyawan() {
 
       {/* Employee Table */}
       <div className="overflow-x-auto">
-        <table className="table-auto w-full border-collapse bg-white rounded-lg shadow-md">
+        <table className="min-w-full border-separate border-spacing-0 bg-white">
           <thead>
-            <tr className="text-left text-gray-500 text-sm uppercase tracking-wider">
-              <th className="px-6 py-3">Nama</th>
-              <th className="px-6 py-3">Posisi</th>
-              <th className="px-6 py-3">Photo</th>
-              <th className="px-6 py-3">Action</th>
+            <tr>
+              <th className="border-b border-gray-200 text-gray-400">NAMA</th>
+              <th className="border-b border-gray-200 text-gray-400">POSISI</th>
+              <th className="border-b border-gray-200 text-gray-400">PHOTO</th>
+              <th className="border-b border-gray-200 text-gray-400">ACTION</th>
             </tr>
           </thead>
           <tbody>
@@ -155,17 +155,17 @@ export default function Karyawan() {
               <React.Fragment key={employee.id}>
                 <tr className="border-t hover:bg-gray-50">
                   {/* Name */}
-                  <td className="px-6 py-4 text-gray-800 font-semibold">
+                  <td className="border-b border-gray-200 px-6 py-4 text-gray-800 font-semibold">
                     {employee.name}
                   </td>
 
                   {/* Position */}
-                  <td className="px-6 py-4 text-gray-800">
+                  <td className="border-b border-gray-200 px-6 py-4 text-gray-800">
                     {employee.position}
                   </td>
 
                   {/* Photo */}
-                  <td className="px-6 py-4">
+                  <td className="border-b border-gray-200 px-6 py-4">
                     <img
                       src={employee.photo}
                       alt={employee.name}
@@ -174,7 +174,7 @@ export default function Karyawan() {
                   </td>
 
                   {/* Action */}
-                  <td className="px-6 py-4 flex space-x-2">
+                  <td className="border-b border-gray-200 px-6 py-4 flex space-x-2">
                     <button
                       onClick={() => handleEdit(employee)}
                       className="bg-yellow-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-yellow-600"

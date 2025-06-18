@@ -175,7 +175,7 @@ export default function ArtikelNews() {
       <div className="overflow-x-auto">
         <table className="w-full border-collapse bg-white rounded-lg shadow-md">
           <thead>
-            <tr className="text-left text-gray-500 text-sm uppercase tracking-wider">
+            <tr className="text-left text-gray-700 border-b border-gray-200 text-sm uppercase tracking-wider">
               <th className="px-4 py-3">Gambar</th>
               <th className="px-4 py-3">Judul</th>
               <th className="px-4 py-3">Tanggal</th>
@@ -185,7 +185,7 @@ export default function ArtikelNews() {
           </thead>
           <tbody>
             {articles.map((article) => (
-              <tr key={article.id} className="border-t hover:bg-gray-50 align-top">
+              <tr key={article.id} className="text-gray-700 border-b border-gray-200 hover:bg-gray-50 align-top">
                 <td className="px-4 py-3 w-24">
                   <img
                     src={article.image}

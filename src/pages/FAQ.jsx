@@ -210,47 +210,53 @@ export default function FAQ() {
           )}
 
           {!loading && faqs.length > 0 ? (
-            <GenericTable
-              columns={["#", "Pertanyaan", "Jawaban", "Aksi"]}
-              data={faqs}
-              renderRow={(faq, index) => (
-                <>
-                  <td className="px-6 py-4 font-medium text-gray-700">
-                    {index + 1}.
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="font-semibold text-emerald-600">
-                      {faq.title}
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 break-words">
-                    <div className="text-gray-600">
-                      {faq.jawaban}
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 max-w-xs">
-                    <div className="flex gap-2 items-center">
-                      <button
-                        onClick={() => handleEdit(faq)}
-                        disabled={loading}
-                        className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
-                        title="Edit"
-                      >
-                        <AiFillEdit className="text-2xl text-yellow-500" />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(faq.id)}
-                        disabled={loading}
-                        className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
-                        title="Hapus"
-                      >
-                        <AiFillDelete className="text-2xl text-red-500" />
-                      </button>
-                    </div>
-                  </td>
-                </>
-              )}
-            />
+            <table className="min-w-full bg-white">
+              <thead>
+                <tr>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">#</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Pertanyaan</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Jawaban</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                {faqs.map((faq, index) => (
+                  <tr key={faq.id}>
+                    <td className="px-6 py-4 border-b border-gray-200">
+                      {index + 1}.
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200">
+                      <div className="font-semibold text-emerald-600">
+                        {faq.title}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200 break-words">
+                      <div className="text-gray-600">
+                        {faq.jawaban}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200">
+                      <div className="flex flex-col space-y-2">
+                        <button
+                          onClick={() => handleDelete(faq.id)}
+                          className="w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                        >
+                          <AiFillDelete className="text-2xl text-red-500" />
+                          <span>Delete</span>
+                        </button>
+                        <button
+                          onClick={() => handleEdit(faq)}
+                          className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                        >
+                          <AiFillEdit className="text-2xl text-yellow-500" />
+                          <span>Edit</span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           ) : null}
         </div>
       </div>

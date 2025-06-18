@@ -221,52 +221,61 @@ export default function Galeri() {
           )}
 
           {!loading && galeri.length > 0 ? (
-            <GenericTable
-              columns={["#", "Judul", "Gambar", "Video", "Aksi"]}
-              data={galeri}
-              renderRow={(item, index) => (
-                <>
-                  <td className="px-6 py-4 font-medium text-gray-700">
-                    {index + 1}.
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="font-semibold text-emerald-600">
-                      {item.title}
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 max-w-xs">
-                    <div className="truncate text-gray-600">
-                      <a href={item.gambar} target="_blank" rel="noopener noreferrer">{item.gambar}</a>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 max-w-xs">
-                    <div className="truncate text-gray-600">
-                      <a href={item.video} target="_blank" rel="noopener noreferrer">{item.video}</a>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 max-w-xs">
-                    <div className="flex gap-2 items-center">
-                      <button
-                        onClick={() => handleEdit(item)}
-                        disabled={loading}
-                        className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
-                        title="Edit"
-                      >
-                        <AiFillEdit className="text-2xl text-yellow-500" />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(item.id)}
-                        disabled={loading}
-                        className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
-                        title="Hapus"
-                      >
-                        <AiFillDelete className="text-2xl text-red-500" />
-                      </button>
-                    </div>
-                  </td>
-                </>
-              )}
-            />
+            <table className="min-w-full bg-white">
+              <thead>
+                <tr>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">#</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Judul</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Gambar</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Video</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                {galeri.map((item, index) => (
+                  <tr key={item.id}>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top font-semibold text-gray-700">
+                      {index + 1}.
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">
+                      <div className="font-semibold text-emerald-600">
+                        {item.title}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top max-w-xs">
+                      <div className="truncate text-gray-600">
+                        <a href={item.gambar} target="_blank" rel="noopener noreferrer">{item.gambar}</a>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top max-w-xs">
+                      <div className="truncate text-gray-600">
+                        <a href={item.video} target="_blank" rel="noopener noreferrer">{item.video}</a>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">
+                      <div className="flex gap-2 items-center">
+                        <button
+                          onClick={() => handleEdit(item)}
+                          disabled={loading}
+                          className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
+                          title="Edit"
+                        >
+                          <AiFillEdit className="text-2xl text-yellow-500" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(item.id)}
+                          disabled={loading}
+                          className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
+                          title="Hapus"
+                        >
+                          <AiFillDelete className="text-2xl text-red-500" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           ) : null}
         </div>
       </div>
