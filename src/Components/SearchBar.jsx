@@ -23,15 +23,38 @@ export default function SearchBar() {
       <div className="flex items-center gap-2">
         <button
           className="px-4 py-2 text-gray-500 rounded-lg flex items-center space-x-2"
-          onClick={() =>
-            window.open("https://react-project-gooy.vercel.app/", "_blank")
-          }
+          popoverTarget="popover-1"
+          style={{ anchorName: "--anchor-1" } /* as React.CSSProperties */}
         >
-          <div className="flex items-center gap-2 text-gray-500">
-            <FaUserAlt className="text-2xl" />
-            <span>Sign In</span>
-          </div>
+          <FaUserAlt className="text-2xl" />
+          <span>Sign In</span>
         </button>
+
+        <ul
+          className="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+          popover="auto"
+          id="popover-1"
+          style={{ positionAnchor: "--anchor-1" } /* as React.CSSProperties */}
+        >
+          <li>
+            <a
+              onClick={() =>
+                window.open("https://sneaker-x-mocha.vercel.app/", "_blank")
+              }
+            >
+              Admin
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={() =>
+                window.open("https://react-project-gooy.vercel.app/", "_blank")
+              }
+            >
+              Guest
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );
