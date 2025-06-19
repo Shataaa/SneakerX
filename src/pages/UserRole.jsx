@@ -267,7 +267,9 @@ export default function UserRole() {
                   <td className="px-6 py-4">{item.email}</td>
                   <td className="px-6 py-4">{item.password}</td>
                   <td className="px-6 py-4">{item.role}</td>
-                  <td className="px-6 py-4">{item["status user"]}</td>
+                  <td className="px-6 py-4 border-b border-gray-200">
+                    {item.status_user}
+                  </td>
                   <td className="px-6 py-4">{item.created_at}</td>
                   <td className="px-6 py-4">
                     <div className="flex gap-2 items-center">
