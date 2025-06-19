@@ -136,7 +136,7 @@ export default function FAQ() {
         <h3 className="text-lg font-semibold text-gray-800 mb-4">
           Tambah FAQ Baru
         </h3>
-        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4">
+        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4 text-abu500">
           <input
             type="text"
             name="question"
@@ -194,7 +194,7 @@ export default function FAQ() {
       <div className="bg-white rounded-2xl shadow-lg overflow-x-auto mt-10">
         <div className="w-full">
           <div className="px-6 py-4 ">
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-lg text-abu500 font-semibold">
               Daftar FAQ ({faqs.length})
             </h3>
           </div>
@@ -213,16 +213,16 @@ export default function FAQ() {
             <table className="min-w-full bg-white">
               <thead>
                 <tr>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">#</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Pertanyaan</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Jawaban</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Aksi</th>
+                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">#</th>
+                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">Pertanyaan</th>
+                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">Jawaban</th>
+                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">Aksi</th>
                 </tr>
               </thead>
               <tbody>
                 {faqs.map((faq, index) => (
                   <tr key={faq.id}>
-                    <td className="px-6 py-4 border-b border-gray-200">
+                    <td className="px-6 py-4 border-b border-gray-200 text-abu500">
                       {index + 1}.
                     </td>
                     <td className="px-6 py-4 border-b border-gray-200">

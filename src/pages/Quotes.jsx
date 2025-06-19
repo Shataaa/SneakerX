@@ -18,7 +18,7 @@ export default function Quotes() {
   return (
     <div className="p-4">
       {quote && (
-        <div className="mb-4 p-4 bg-blue-100 rounded-lg max-w-xl mx-auto">
+        <div className="mb-4 p-4 bg-biru rounded-lg max-w-xl mx-auto">
           <p className="italic">"{quote}"</p>
           <p className="text-right font-semibold mt-2">- Today's Quote</p>
         </div>

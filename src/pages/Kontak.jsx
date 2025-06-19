@@ -158,7 +158,7 @@ export default function Kontak() {
         <h3 className="text-lg font-semibold text-gray-800 mb-4">
           Tambah Kontak Baru
         </h3>
-        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4">
+        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4 text-abu500">
           <input
             type="text"
             name="namaPengirim"
@@ -259,7 +259,7 @@ export default function Kontak() {
       <div className="bg-white rounded-2xl shadow-lg overflow-x-auto mt-10">
         <div className="w-full">
           <div className="px-6 py-4 ">
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-lg font-semibold text-abu500">
               Daftar Kontak ({kontak.length})
             </h3>
           </div>
@@ -278,19 +278,19 @@ export default function Kontak() {
             <table className="min-w-full bg-white">
               <thead>
                 <tr>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                     #
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                     Nama
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                     Email
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                     Pesan
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                     Aksi
                   </th>
                 </tr>
@@ -298,7 +298,7 @@ export default function Kontak() {
               <tbody>
                 {kontak.map((item, index) => (
                   <tr key={item.id}>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top font-semibold text-gray-700">
+                    <td className="px-6 py-4 border-b border-gray-200 align-top font-semibold text-abu500">
                       {index + 1}.
                     </td>
                     <td className="px-6 py-4 border-b border-gray-200 align-top">
@@ -307,10 +307,10 @@ export default function Kontak() {
                       </div>
                     </td>
                     <td className="px-6 py-4 border-b border-gray-200 align-top">
-                      <div className="text-gray-600">{item.email}</div>
+                      <div className="text-abu500">{item.email}</div>
                     </td>
                     <td className="px-6 py-4 border-b border-gray-200 align-top max-w-xs">
-                      <div className="text-gray-600">{item.isiPesan}</div>
+                      <div className="text-abu500">{item.isiPesan}</div>
                     </td>
                     <td className="px-6 py-4 border-b border-gray-200 align-top">
                       <div className="flex gap-2 items-center">

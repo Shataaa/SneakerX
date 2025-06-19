@@ -135,7 +135,7 @@ export default function Galeri() {
         <h3 className="text-lg font-semibold text-gray-800 mb-4">
           Tambah Galeri Baru
         </h3>
-        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4">
+        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4 text-abu500">
           <input
             type="text"
             name="title"
@@ -205,7 +205,7 @@ export default function Galeri() {
       <div className="bg-white rounded-2xl shadow-lg overflow-x-auto mt-10">
         <div className="w-full">
           <div className="px-6 py-4 ">
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-lg font-semibold text-abu500">
               Daftar Galeri ({galeri.length})
             </h3>
           </div>
@@ -224,7 +224,7 @@ export default function Galeri() {
             <table className="min-w-full bg-white">
               <thead>
                 <tr>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">N</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">#</th>
                   <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Judul</th>
                   <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Gambar</th>
                   <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Video</th>

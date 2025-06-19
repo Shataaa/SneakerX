@@ -52,16 +52,16 @@ export default function Customer() {
         <table className="min-w-full bg-white rounded-2xl">
           <thead>
             <tr>
-              <th className="px-6 py-4 text-left font-bold text-gray-400 border-b border-gray-200">
-                NAMA
+              <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+                Nama
               </th>
-              <th className="px-6 py-4 text-left font-bold text-gray-400 border-b border-gray-200">
+              <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                 STATUS
               </th>
-              <th className="px-6 py-4 text-left font-bold text-gray-400 border-b border-gray-200">
+              <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                 REVIEW
               </th>
-              <th className="px-6 py-4 text-left font-bold text-gray-400 border-b border-gray-200">
+              <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                 ACTION
               </th>
             </tr>
@@ -71,7 +71,7 @@ export default function Customer() {
               <React.Fragment key={index}>
                 <tr className="border-t hover:bg-gray-50">
                   {/* Nama dan Avatar */}
-                  <td className="px-6 py-4 text-gray-800 border-b border-gray-200">
+                  <td className="px-6 py-4 text-abu500 border-b border-gray-200">
                     <div className="flex items-center gap-3">
                       {/* Avatar */}
                       <img
@@ -81,10 +81,10 @@ export default function Customer() {
                       />
                       {/* Nama dan Email */}
                       <div>
-                        <div className="font-bold text-gray-800">
+                        <div className="font-bold text-abu500">
                           {customer.customerName}
                         </div>
-                        <div className="text-gray-400 text-sm">
+                        <div className="text-abu500 text-sm">
                           {customer.email}
                         </div>
                       </div>
@@ -105,7 +105,7 @@ export default function Customer() {
                   </td>
 
                   {/* Review */}
-                  <td className="px-6 py-4 border-b border-gray-200">
+                  <td className="px-6 py-4 border-b border-gray-200 text-abu500">
                     {customer.review}
                   </td>
 

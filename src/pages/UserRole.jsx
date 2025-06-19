@@ -141,7 +141,7 @@ export default function UserRole() {
         <h3 className="text-lg font-semibold text-gray-800 mb-4">
           Tambah User Baru
         </h3>
-        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4">
+        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4 text-abu500">
           <input
             type="text"
             name="nama"
@@ -229,7 +229,7 @@ export default function UserRole() {
       {/* User Role Table & State */}
       <div className="bg-white rounded-2xl shadow-lg overflow-x-auto">
         <div className="px-6 py-4 ">
-          <h3 className="text-lg font-semibold">
+          <h3 className="text-lg font-semibold text-abu500">
             Daftar User ({userRole.length})
           </h3>
         </div>
@@ -263,13 +263,13 @@ export default function UserRole() {
                 {userRole.map((user, idx) => (
                   <tr key={user.id}>
                     <td className="px-6 py-4 border-b border-gray-200 align-top font-semibold text-gray-700">{idx + 1}.</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.nama}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.email}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.password}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.role}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.status_user}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.created_at}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">
+                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.nama}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.email}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.password}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.role}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.status_user}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.created_at}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">
                       <div className="flex gap-2 items-center">
                         <button
                           onClick={() => handleEdit(user)}

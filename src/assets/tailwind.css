@@ -27,4 +27,9 @@
     --color-merah: #ef4444; 
     --color-biru: #3b82f6;
     --color-kuning: #f59e0b; 
+    --color-abu200: #e5e7eb;
+    --color-abu400: #9ca3af;
+    --color-abu500: #6b7280;
 }
+
+@plugin "daisyui";
