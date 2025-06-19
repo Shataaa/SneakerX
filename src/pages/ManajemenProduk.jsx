@@ -74,7 +74,7 @@ export default function ManajemenProduk() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto bg-white p-4 rounded shadow">
+    <div className="max-w-5xl mx-auto bg-white p-4 rounded-2xl">
       <PageHeader title="Dashboard" breadcrumb={["Manajemen Produk"]}/>
       {!showAddForm && (
         <button

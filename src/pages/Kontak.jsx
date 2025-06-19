@@ -275,52 +275,65 @@ export default function Kontak() {
           )}
 
           {!loading && kontak.length > 0 ? (
-            <GenericTable
-              columns={[
-                "#",
-                "Nama Pengirim",
-                "Email",
-                "Subjek",
-                "Isi Pesan",
-                "Tanggal Kirim",
-                "Status",
-                "Aksi",
-              ]}
-              data={kontak}
-              renderRow={(item, index) => (
-                <>
-                  <td className="px-6 py-4 font-medium text-gray-700">
-                    {index + 1}.
-                  </td>
-                  <td className="px-6 py-4">{item.namaPengirim}</td>
-                  <td className="px-6 py-4">{item.email}</td>
-                  <td className="px-6 py-4">{item.subjekPesan}</td>
-                  <td className="px-6 py-4">{item.isiPesan}</td>
-                  <td className="px-6 py-4">{item.tanggalKirim}</td>
-                  <td className="px-6 py-4">{item.status}</td>
-                  <td className="px-6 py-4">
-                    <div className="flex gap-2 items-center">
-                      <button
-                        onClick={() => handleEdit(item)}
-                        disabled={loading}
-                        className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
-                        title="Edit"
-                      >
-                        <AiFillEdit className="text-2xl text-yellow-500" />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(item.id)}
-                        disabled={loading}
-                        className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
-                        title="Hapus"
-                      >
-                        <AiFillDelete className="text-2xl text-red-500" />
-                      </button>
-                    </div>
-                  </td>
-                </>
-              )}
-            />
+            <table className="min-w-full bg-white">
+              <thead>
+                <tr>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    #
+                  </th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Nama
+                  </th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Email
+                  </th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Pesan
+                  </th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Aksi
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {kontak.map((item, index) => (
+                  <tr key={item.id}>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top font-semibold text-gray-700">
+                      {index + 1}.
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">
+                      <div className="font-semibold text-emerald-600">
+                        {item.namaPengirim}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">
+                      <div className="text-gray-600">{item.email}</div>
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top max-w-xs">
+                      <div className="text-gray-600">{item.isiPesan}</div>
+                    </td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">
+                      <div className="flex gap-2 items-center">
+                        <button
+                          onClick={() => handleEdit(item)}
+                          className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
+                          title="Edit"
+                        >
+                          <AiFillEdit className="text-2xl text-yellow-500" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(item.id)}
+                          className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
+                          title="Hapus"
+                        >
+                          <AiFillDelete className="text-2xl text-red-500" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           ) : null}
         </div>
       </div>

@@ -246,54 +246,51 @@ export default function UserRole() {
 
         {!loading && userRole.length > 0 ? (
           <div className="w-full"> {/* Ubah min-w-[900px] ke w-full */}
-            <GenericTable
-              columns={[
-                "#",
-                "Nama",
-                "Email",
-                "Password",
-                "Role",
-                "Status User",
-                "Created At",
-                "Aksi",
-              ]}
-              data={userRole}
-              renderRow={(item, index) => (
-                <>
-                  <td className="px-6 py-4 font-medium text-gray-700">
-                    {index + 1}.
-                  </td>
-                  <td className="px-6 py-4">{item.nama}</td>
-                  <td className="px-6 py-4">{item.email}</td>
-                  <td className="px-6 py-4">{item.password}</td>
-                  <td className="px-6 py-4">{item.role}</td>
-                  <td className="px-6 py-4 border-b border-gray-200">
-                    {item.status_user}
-                  </td>
-                  <td className="px-6 py-4">{item.created_at}</td>
-                  <td className="px-6 py-4">
-                    <div className="flex gap-2 items-center">
-                      <button
-                        onClick={() => handleEdit(item)}
-                        disabled={loading}
-                        className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
-                        title="Edit"
-                      >
-                        <AiFillEdit className="text-2xl text-yellow-500" />
-                      </button>
-                      <button
-                        onClick={() => handleDelete(item.id)}
-                        disabled={loading}
-                        className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
-                        title="Hapus"
-                      >
-                        <AiFillDelete className="text-2xl text-red-500" />
-                      </button>
-                    </div>
-                  </td>
-                </>
-              )}
-            />
+            <table className="min-w-full bg-white">
+              <thead>
+                <tr>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">#</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Nama</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Email</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Password</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Role</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Status User</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Created At</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                {userRole.map((user, idx) => (
+                  <tr key={user.id}>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top font-semibold text-gray-700">{idx + 1}.</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.nama}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.email}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.password}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.role}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.status_user}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">{user.created_at}</td>
+                    <td className="px-6 py-4 border-b border-gray-200 align-top">
+                      <div className="flex gap-2 items-center">
+                        <button
+                          onClick={() => handleEdit(user)}
+                          className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
+                          title="Edit"
+                        >
+                          <AiFillEdit className="text-2xl text-yellow-500" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(user.id)}
+                          className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
+                          title="Hapus"
+                        >
+                          <AiFillDelete className="text-2xl text-red-500" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         ) : null}
       </div>

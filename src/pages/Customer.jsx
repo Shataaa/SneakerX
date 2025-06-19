@@ -49,7 +49,7 @@ export default function Customer() {
 
       {/* Customer Table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white">
+        <table className="min-w-full bg-white rounded-2xl">
           <thead>
             <tr>
               <th className="px-6 py-4 text-left font-bold text-gray-400 border-b border-gray-200">

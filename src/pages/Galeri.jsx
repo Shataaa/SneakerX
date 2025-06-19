@@ -224,7 +224,7 @@ export default function Galeri() {
             <table className="min-w-full bg-white">
               <thead>
                 <tr>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">#</th>
+                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">N</th>
                   <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Judul</th>
                   <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Gambar</th>
                   <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Video</th>

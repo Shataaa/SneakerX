@@ -40,7 +40,7 @@ export default function CompanyProfileList() {
   return (
     <div className="overflow-x-auto">
       <PageHeader title="Dashboard" breadcrumb={["Company List"]} />
-      <table className="min-w-full bg-white">
+      <table className="min-w-full bg-white rounded-2xl">
         <thead>
           <tr>
             <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">

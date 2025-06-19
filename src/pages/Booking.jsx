@@ -51,7 +51,7 @@ export default function Booking() {
 
       {/* Booking Table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white">
+        <table className="min-w-full bg-white rounded-2xl">
           <thead>
             <tr>
               <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">

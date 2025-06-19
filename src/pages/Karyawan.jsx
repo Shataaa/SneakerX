@@ -141,7 +141,7 @@ export default function Karyawan() {
 
       {/* Employee Table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full border-separate border-spacing-0 bg-white">
+        <table className="min-w-full border-separate border-spacing-0 bg-white rounded-2xl">
           <thead>
             <tr>
               <th className="border-b border-gray-200 text-gray-400">NAMA</th>

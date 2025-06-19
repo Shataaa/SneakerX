@@ -88,7 +88,7 @@ export default function ArtikelNews() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto bg-white p-4 rounded shadow">
+    <div className="max-w-5xl mx-auto bg-white p-4 rounded-2xl">
       <PageHeader title="Dashboard" breadcrumb={["Artikel News"]}/>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-bold">Daftar Artikel News</h2>
@@ -173,7 +173,7 @@ export default function ArtikelNews() {
 
       {/* List Artikel */}
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse bg-white rounded-lg shadow-md">
+        <table className="w-full border-collapse bg-white rounded-2xl">
           <thead>
             <tr className="text-left text-gray-700 border-b border-gray-200 text-sm uppercase tracking-wider">
               <th className="px-4 py-3">Gambar</th>
