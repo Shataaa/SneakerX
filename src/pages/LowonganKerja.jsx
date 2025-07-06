@@ -82,7 +82,7 @@ export default function LowonganKerja() {
       {!showAddForm && (
         <button
           onClick={() => setShowAddForm(true)}
-          className="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 flex items-center space-x-2 mb-6"
+          className="font-arimo bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 flex items-center space-x-2 mb-6"
         >
           <FaPlus />
           <span>Tambah Lowongan</span>
@@ -92,56 +92,58 @@ export default function LowonganKerja() {
       {/* Form Tambah Lowongan */}
       {showAddForm && (
         <div className="mb-6 p-4 text-gray-700 border-b border-gray-200">
-          <h3 className="text-xl font-semibold mb-4">Tambah Lowongan</h3>
+          <h3 className="font-arimo text-xl font-semibold mb-4">
+            Tambah Lowongan
+          </h3>
           <div className="mb-4">
-            <label className="block text-gray-700">Posisi</label>
+            <label className="font-arimo block text-gray-700">Posisi</label>
             <input
               type="text"
               name="posisi"
               value={newJob.posisi}
               onChange={handleNewJobChange}
-              className="w-full px-4 py-2 border rounded-lg"
+              className="font-arimo w-full px-4 py-2 border rounded-lg"
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Perusahaan</label>
+            <label className="font-arimo block text-gray-700">Perusahaan</label>
             <input
               type="text"
               name="perusahaan"
               value={newJob.perusahaan}
               onChange={handleNewJobChange}
-              className="w-full px-4 py-2 border rounded-lg"
+              className="font-arimo w-full px-4 py-2 border rounded-lg"
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Lokasi</label>
+            <label className="font-arimo block text-gray-700">Lokasi</label>
             <input
               type="text"
               name="lokasi"
               value={newJob.lokasi}
               onChange={handleNewJobChange}
-              className="w-full px-4 py-2 border rounded-lg"
+              className="font-arimo w-full px-4 py-2 border rounded-lg"
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Deskripsi</label>
+            <label className="font-arimo block text-gray-700">Deskripsi</label>
             <textarea
               name="deskripsi"
               value={newJob.deskripsi}
               onChange={handleNewJobChange}
-              className="w-full px-4 py-2 border rounded-lg"
+              className="font-arimo w-full px-4 py-2 border rounded-lg"
             />
           </div>
           <div className="flex space-x-4">
             <button
               onClick={handleAddJob}
-              className="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600"
+              className="font-arimo bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600"
             >
               Simpan
             </button>
             <button
               onClick={() => setShowAddForm(false)}
-              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
+              className="font-arimo bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
             >
               Batal
             </button>
@@ -154,41 +156,41 @@ export default function LowonganKerja() {
         <table className="table-auto w-full border-collapse bg-white rounded-lg shadow-md ">
           <thead>
             <tr className="text-left text-gray-700 border-b border-gray-200 text-sm uppercase tracking-wider">
-              <th className="px-6 py-3">Posisi</th>
-              <th className="px-6 py-3">Perusahaan</th>
-              <th className="px-6 py-3">Lokasi</th>
-              <th className="px-6 py-3">Deskripsi</th>
-              <th className="px-6 py-3">Action</th>
+              <th className="font-arimo px-6 py-3">Posisi</th>
+              <th className="font-arimo px-6 py-3">Perusahaan</th>
+              <th className="font-arimo px-6 py-3">Lokasi</th>
+              <th className="font-arimo px-6 py-3">Deskripsi</th>
+              <th className="font-arimo px-6 py-3">Action</th>
             </tr>
           </thead>
           <tbody>
             {jobs.map((job) => (
               <React.Fragment key={job.id}>
                 <tr className="border-t hover:bg-gray-50">
-                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                  <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                     {job.posisi}
                   </td>
-                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                  <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                     {job.perusahaan}
                   </td>
-                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                  <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                     {job.lokasi}
                   </td>
-                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                  <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                     {job.deskripsi}
                   </td>
-                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                  <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                     <div className="flex flex-col space-y-2">
                       <button
                         onClick={() => handleDelete(job.id)}
-                        className="w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                        className="font-arimo w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
                       >
                         <FaTrash />
                         <span>Delete</span>
                       </button>
                       <button
                         onClick={() => handleEdit(job)}
-                        className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                        className="font-arimo w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
                       >
                         <FaEdit />
                         <span>Edit</span>
@@ -199,7 +201,10 @@ export default function LowonganKerja() {
                 {/* Edit Form */}
                 {editingJob === job.id && (
                   <tr>
-                    <td colSpan="5" className="bg-gray-100 p-4">
+                    <td
+                      colSpan="5"
+                      className="font-arimo bg-gray-100 p-4 text-abu500"
+                    >
                       <div className="p-4 bg-gray-100 rounded-lg shadow-md">
                         <h3 className="text-xl font-semibold mb-4">
                           Edit Lowongan

@@ -6,12 +6,15 @@ import Quotes from "../pages/Quotes";
 export default function MainLayout() {
   return (
     <>
-      <div id="app-container" className="bg-gray-100 min-h-screen flex">
-        <div id="layout-wrapper" className="flex flex-row flex-1">
+      <div
+        id="app-container"
+        className="font-arimo bg-gray-100 min-h-screen flex"
+      >
+        <div id="layout-wrapper" className="font-arimo flex flex-row flex-1">
           <Sidebar />
-          <div id="main-content" className="flex-1 p-4">
+          <div id="main-content" className="font-arimo flex-1 p-4">
             <Header />
-            <Quotes/>
+            <Quotes />
             <Outlet />
           </div>
         </div>

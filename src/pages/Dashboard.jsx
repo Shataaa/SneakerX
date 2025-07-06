@@ -1,8 +1,4 @@
 import PageHeader from "../Components/PageHeader";
-import { AiOutlineUnorderedList } from "react-icons/ai";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { AiOutlineLineChart } from "react-icons/ai";
-import { MdArticle } from "react-icons/md";
 import { Bar, Line, Pie } from "react-chartjs-2"; // Import Bar, Line, Pie Chart dari react-chartjs-2
 import {
   Chart as ChartJS,
@@ -173,16 +169,16 @@ export default function Dashboard() {
   };
 
   return (
-    <div id="dashboard-container">
-        <PageHeader title="Dashboard"/>
-      <div className="stats shadow">
-        <div className="stat">
-          <div className="stat-figure text-secondary">
+    <div id="dashboard-container" className="font-arimo">
+      <PageHeader title="Dashboard" />
+      <div className="font-arimo stats shadow bg-white rounded-lg p-6 mt-4 flex justify-center w-fit mx-auto">
+        <div className="font-arimo stat">
+          <div className="font-arimo stat-figure text-secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              className="inline-block h-8 w-8 stroke-current"
+              className="font-arimo inline-block h-8 w-8 stroke-current"
             >
               <path
                 strokeLinecap="round"
@@ -192,18 +188,20 @@ export default function Dashboard() {
               ></path>
             </svg>
           </div>
-          <div className="stat-title text-abu500">Downloads</div>
-          <div className="stat-value text-abu500">31K</div>
-          <div className="stat-desc text-abu500">Jan 1st - Feb 1st</div>
+          <div className="font-arimo stat-title text-abu500">Downloads</div>
+          <div className="font-arimo stat-value text-abu500">31K</div>
+          <div className="font-arimo stat-desc text-abu500">
+            Jan 1st - Feb 1st
+          </div>
         </div>
 
-        <div className="stat">
-          <div className="stat-figure text-secondary">
+        <div className="font-arimo stat">
+          <div className="font-arimo stat-figure text-secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              className="inline-block h-8 w-8 stroke-current"
+              className="font-arimo inline-block h-8 w-8 stroke-current"
             >
               <path
                 strokeLinecap="round"
@@ -213,18 +211,18 @@ export default function Dashboard() {
               ></path>
             </svg>
           </div>
-          <div className="stat-title text-abu500">New Users</div>
-          <div className="stat-value text-abu500">4,200</div>
-          <div className="stat-desc text-abu500">↗︎ 400 (22%)</div>
+          <div className="font-arimo stat-title text-abu500">New Users</div>
+          <div className="font-arimo stat-value text-abu500">4,200</div>
+          <div className="font-arimo stat-desc text-abu500">↗︎ 400 (22%)</div>
         </div>
 
-        <div className="stat">
-          <div className="stat-figure text-secondary">
+        <div className="font-arimo stat">
+          <div className="font-arimo stat-figure text-secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              className="inline-block h-8 w-8 stroke-current"
+              className="font-arimo inline-block h-8 w-8 stroke-current"
             >
               <path
                 strokeLinecap="round"
@@ -234,16 +232,16 @@ export default function Dashboard() {
               ></path>
             </svg>
           </div>
-          <div className="stat-title text-abu500">New Registers</div>
-          <div className="stat-value text-abu500">1,200</div>
-          <div className="stat-desc text-abu500">↘︎ 90 (14%)</div>
+          <div className="font-arimo stat-title text-abu500">New Registers</div>
+          <div className="font-arimo stat-value text-abu500">1,200</div>
+          <div className="font-arimo stat-desc text-abu500">↘︎ 90 (14%)</div>
         </div>
       </div>
 
       {/* Grafik Utama */}
       <div
         id="dashboard-chart"
-        className="mt-8 bg-white rounded-lg shadow-md p-6"
+        className="font-arimo mt-8 bg-white rounded-lg shadow-md p-6"
       >
         <Bar data={chartData} options={chartOptions} />
       </div>
@@ -251,78 +249,23 @@ export default function Dashboard() {
       {/* Grafik Tambahan */}
       <div
         id="dashboard-additional-charts"
-        className="mt-8 grid sm:grid-cols-1 md:grid-cols-2 gap-4"
+        className="font-arimo mt-8 grid sm:grid-cols-1 md:grid-cols-2 gap-4"
       >
-        {/* Grafik Garis User Login */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold mb-4">Statistik User Login</h3>
-          <Line data={userLoginData} options={chartOptions} />
-        </div>
-
         {/* Grafik Pie Artikel Populer */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold mb-4">Artikel Populer</h3>
+        <div className="font-arimo bg-white rounded-lg shadow-md p-6">
+          <h3 className="font-arimo text-xl font-semibold mb-4 text-abu500">
+            Artikel Populer
+          </h3>
           <Pie data={popularArticlesData} options={chartOptions} />
         </div>
 
         {/* Grafik Batang Booking */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold mb-4">Statistik Booking</h3>
+        <div className="font-arimo bg-white rounded-lg shadow-md p-6">
+          <h3 className="font-arimo text-xl font-semibold mb-4 text-abu500">
+            Statistik Booking
+          </h3>
           <Bar data={bookingData} options={chartOptions} />
         </div>
-
-        {/* Grafik Garis User Login (Tahun) */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold mb-4">
-            Statistik User Login (2023-2025)
-          </h3>
-          <Line data={userLoginYearlyData} options={chartOptions} />
-        </div>
-
-        {/* Grafik Garis User Login (Bulan) */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold mb-4">
-            Statistik User Login (Januari-Desember)
-          </h3>
-          <Line data={userLoginMonthlyData} options={chartOptions} />
-        </div>
-
-        {/* Grafik Batang Booking (Tahun) */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold mb-4">
-            Statistik Booking (2023-2025)
-          </h3>
-          <Bar data={bookingYearlyData} options={chartOptions} />
-        </div>
-
-        {/* Grafik Batang Booking (Bulan) */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold mb-4">
-            Statistik Booking (Januari-Desember)
-          </h3>
-          <Bar data={bookingMonthlyData} options={chartOptions} />
-        </div>
-      </div>
-
-      {/* Tabel Data Pengunjung */}
-      <div className="mt-8 bg-white rounded-lg shadow-md p-6">
-        <h3 className="text-xl font-semibold mb-4">Data Pengunjung</h3>
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
-                Nama
-              </th>
-              <td className="px-6 py-4 border-b border-gray-200 text-abu400">
-                Email
-              </td>
-              <span className="text-abu200">Contoh</span>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {/* Data pengunjung akan di-mapping di sini */}
-          </tbody>
-        </table>
       </div>
     </div>
   );

@@ -1,8 +1,7 @@
-import { AiFillEdit } from "react-icons/ai"; 
+import { AiFillEdit } from "react-icons/ai";
 import { FAQAPI } from "../services/FAQAPI";
 import { useState, useEffect } from "react";
 import AlertBox from "../Components/AlertBox";
-import GenericTable from "../Components/GenericTable";
 import LoadingSpinner from "../Components/LoadingSpinner";
 import EmptyState from "../Components/EmptyState";
 import { AiFillDelete } from "react-icons/ai";
@@ -123,20 +122,25 @@ export default function FAQ() {
   };
 
   return (
-    <div className="max-w-6xl w-full mx-auto p-6">
-      <div className="mb-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-2">FAQ App</h2>
+    <div className="font-arimo max-w-6xl w-full mx-auto p-6">
+      <div className="font-arimo mb-6">
+        <h2 className="font-arimo text-3xl font-bold text-gray-800 mb-2">
+          FAQ App
+        </h2>
       </div>
 
       {error && <AlertBox type="error">{error}</AlertBox>}
       {success && <AlertBox type="success">{success}</AlertBox>}
 
       {/* Form Card */}
-      <div className="bg-white rounded-2xl shadow-lg p-6">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">
+      <div className="font-arimo bg-white rounded-2xl shadow-lg p-6">
+        <h3 className="font-arimo text-lg font-semibold text-gray-800 mb-4">
           Tambah FAQ Baru
         </h3>
-        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4 text-abu500">
+        <form
+          onSubmit={editId ? handleUpdate : handleSubmit}
+          className="font-arimo space-y-4 text-abu500"
+        >
           <input
             type="text"
             name="question"
@@ -145,8 +149,8 @@ export default function FAQ() {
             onChange={handleChange}
             disabled={loading}
             required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200 focus:outline-none
-                        focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all
+            className="font-arimo w-full p-3 bg-gray-50 rounded-2xl border border-gray-200 focus:outline-none
+                        focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all
                         duration-200"
           />
           <textarea
@@ -157,14 +161,14 @@ export default function FAQ() {
             disabled={loading}
             required
             rows="2"
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200 focus:outline-none
-                        focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all
+            className="font-arimo w-full p-3 bg-gray-50 rounded-2xl border border-gray-200 focus:outline-none
+                        focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all
                         duration-200 resize-none"
           />
           <button
             type="submit"
-            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold
-                        rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500
+            className="font-arimo px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold
+                        rounded-2xl focus:outline-none focus:ring-2 focus:ring-teal-500
                         focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed
                         transition-all duration-200 shadow-lg"
             disabled={loading}
@@ -182,7 +186,7 @@ export default function FAQ() {
                 setEditId(null);
                 setDataForm({ question: "", answer: "" });
               }}
-              className="ml-2 px-6 py-3 bg-gray-400 text-white rounded-2xl"
+              className="font-arimo ml-2 px-6 py-3 bg-gray-400 text-white rounded-2xl"
             >
               Batal Edit
             </button>
@@ -191,10 +195,10 @@ export default function FAQ() {
       </div>
 
       {/* Notes Table & State */}
-      <div className="bg-white rounded-2xl shadow-lg overflow-x-auto mt-10">
-        <div className="w-full">
-          <div className="px-6 py-4 ">
-            <h3 className="text-lg text-abu500 font-semibold">
+      <div className="font-arimo bg-white rounded-2xl shadow-lg overflow-x-auto mt-10">
+        <div className="font-arimo w-full">
+          <div className="font-arimo px-6 py-4 ">
+            <h3 className="font-arimo text-lg text-abu500 font-semibold">
               Daftar FAQ ({faqs.length})
             </h3>
           </div>
@@ -210,46 +214,52 @@ export default function FAQ() {
           )}
 
           {!loading && faqs.length > 0 ? (
-            <table className="min-w-full bg-white">
+            <table className="font-arimo min-w-full bg-white">
               <thead>
                 <tr>
-                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">#</th>
-                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">Pertanyaan</th>
-                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">Jawaban</th>
-                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">Aksi</th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+                    #
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+                    Pertanyaan
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+                    Jawaban
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+                    Aksi
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {faqs.map((faq, index) => (
                   <tr key={faq.id}>
-                    <td className="px-6 py-4 border-b border-gray-200 text-abu500">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 text-abu500">
                       {index + 1}.
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200">
-                      <div className="font-semibold text-emerald-600">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200">
+                      <div className="font-arimo font-semibold text-teal-600">
                         {faq.title}
                       </div>
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200 break-words">
-                      <div className="text-gray-600">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 break-words">
+                      <div className="font-arimo text-gray-600">
                         {faq.jawaban}
                       </div>
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200">
-                      <div className="flex flex-col space-y-2">
-                        <button
-                          onClick={() => handleDelete(faq.id)}
-                          className="w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
-                        >
-                          <AiFillDelete className="text-2xl text-red-500" />
-                          <span>Delete</span>
-                        </button>
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200">
+                      <div className="font-arimo flex flex-col space-y-2">
                         <button
                           onClick={() => handleEdit(faq)}
-                          className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                          className="font-arimo w-full bg-teal-500 hover:bg-teal-700 transition-colors text-white px-4 py-2 rounded-lg flex items-center gap-2"
                         >
-                          <AiFillEdit className="text-2xl text-yellow-500" />
-                          <span>Edit</span>
+                          <AiFillEdit className="font-arimo text-2xl text-yellow-500" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(faq.id)}
+                          className="font-arimo w-full px-4 py-2 rounded-lg flex items-center gap-2 bg-red-200 hover:bg-red-400 transition-colors"
+                        >
+                          <AiFillDelete className="font-arimo text-2xl text-red-500" />
                         </button>
                       </div>
                     </td>

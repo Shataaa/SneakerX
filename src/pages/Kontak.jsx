@@ -147,119 +147,19 @@ export default function Kontak() {
   return (
     <div className="max-w-6xl w-full mx-auto p-6">
       <div className="mb-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-2">Kontak App</h2>
+        <h2 className="font-arimo text-3xl font-bold text-gray-800 mb-2">
+          Kontak App
+        </h2>
       </div>
 
       {error && <AlertBox type="error">{error}</AlertBox>}
       {success && <AlertBox type="success">{success}</AlertBox>}
 
-      {/* Form Card */}
-      <div className="bg-white rounded-2xl shadow-lg p-6">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">
-          Tambah Kontak Baru
-        </h3>
-        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4 text-abu500">
-          <input
-            type="text"
-            name="namaPengirim"
-            value={dataForm.namaPengirim}
-            placeholder="Nama Pengirim"
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          />
-          <input
-            type="email"
-            name="email"
-            value={dataForm.email}
-            placeholder="Email"
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          />
-          <input
-            type="text"
-            name="subjekPesan"
-            value={dataForm.subjekPesan}
-            placeholder="Subjek Pesan"
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          />
-          <textarea
-            name="isiPesan"
-            value={dataForm.isiPesan}
-            placeholder="Isi Pesan"
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          />
-          <input
-            type="date"
-            name="tanggalKirim"
-            value={dataForm.tanggalKirim}
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          />
-          <select
-            name="status"
-            value={dataForm.status}
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          >
-            <option value="">Pilih Status</option>
-            <option value="Belum dibaca">Belum dibaca</option>
-            <option value="Sudah dibaca">Sudah dibaca</option>
-          </select>
-          <button
-            type="submit"
-            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold
-                        rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500
-                        focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed
-                        transition-all duration-200 shadow-lg"
-            disabled={loading}
-          >
-            {loading
-              ? "Mohon Tunggu..."
-              : editId
-              ? "Update Kontak"
-              : "Tambah Kontak"}
-          </button>
-          {editId && (
-            <button
-              type="button"
-              onClick={() => {
-                setEditId(null);
-                setDataForm({
-                  namaPengirim: "",
-                  email: "",
-                  subjekPesan: "",
-                  isiPesan: "",
-                  tanggalKirim: "",
-                  status: "",
-                });
-              }}
-              className="ml-2 px-6 py-3 bg-gray-400 text-white rounded-2xl"
-            >
-              Batal Edit
-            </button>
-          )}
-        </form>
-      </div>
-
       {/* Kontak Table & State */}
       <div className="bg-white rounded-2xl shadow-lg overflow-x-auto mt-10">
         <div className="w-full">
           <div className="px-6 py-4 ">
-            <h3 className="text-lg font-semibold text-abu500">
+            <h3 className="font-arimo text-lg font-semibold text-abu500">
               Daftar Kontak ({kontak.length})
             </h3>
           </div>
@@ -278,19 +178,19 @@ export default function Kontak() {
             <table className="min-w-full bg-white">
               <thead>
                 <tr>
-                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                     #
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                     Nama
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                     Email
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                     Pesan
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                     Aksi
                   </th>
                 </tr>
@@ -298,32 +198,25 @@ export default function Kontak() {
               <tbody>
                 {kontak.map((item, index) => (
                   <tr key={item.id}>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top font-semibold text-abu500">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top font-semibold text-abu500">
                       {index + 1}.
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">
-                      <div className="font-semibold text-emerald-600">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top">
+                      <div className="font-semibold text-teal-600">
                         {item.namaPengirim}
                       </div>
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top">
                       <div className="text-abu500">{item.email}</div>
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top max-w-xs">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top max-w-xs">
                       <div className="text-abu500">{item.isiPesan}</div>
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top">
                       <div className="flex gap-2 items-center">
                         <button
-                          onClick={() => handleEdit(item)}
-                          className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
-                          title="Edit"
-                        >
-                          <AiFillEdit className="text-2xl text-yellow-500" />
-                        </button>
-                        <button
                           onClick={() => handleDelete(item.id)}
-                          className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
+                          className="font-arimo px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
                           title="Hapus"
                         >
                           <AiFillDelete className="text-2xl text-red-500" />

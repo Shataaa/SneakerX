@@ -122,20 +122,25 @@ export default function Galeri() {
   };
 
   return (
-    <div className="max-w-6xl w-full mx-auto p-6"> {/* Ubah max-w-2xl ke max-w-6xl dan tambah w-full */}
+    <div className="max-w-6xl w-full mx-auto p-6">
+      {" "}
+      {/* Ubah max-w-2xl ke max-w-6xl dan tambah w-full */}
       <div className="mb-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-2">Galeri App</h2>
+        <h2 className="font-arimo text-3xl font-bold text-gray-800 mb-2">
+          Galeri App
+        </h2>
       </div>
-
       {error && <AlertBox type="error">{error}</AlertBox>}
       {success && <AlertBox type="success">{success}</AlertBox>}
-
       {/* Form Card */}
       <div className="bg-white rounded-2xl shadow-lg p-6">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">
+        <h3 className="font-arimo text-lg font-semibold text-gray-800 mb-4">
           Tambah Galeri Baru
         </h3>
-        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4 text-abu500">
+        <form
+          onSubmit={editId ? handleUpdate : handleSubmit}
+          className="font-arimo space-y-4 text-abu500"
+        >
           <input
             type="text"
             name="title"
@@ -145,7 +150,7 @@ export default function Galeri() {
             disabled={loading}
             required
             className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200 focus:outline-none
-                        focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all
+                        focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all
                         duration-200"
           />
           <input
@@ -157,7 +162,7 @@ export default function Galeri() {
             disabled={loading}
             required
             className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200 focus:outline-none
-                        focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all
+                        focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all
                         duration-200"
           />
           <input
@@ -169,13 +174,13 @@ export default function Galeri() {
             disabled={loading}
             required
             className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200 focus:outline-none
-                        focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all
+                        focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all
                         duration-200"
           />
           <button
             type="submit"
-            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold
-                        rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500
+            className="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold
+                        rounded-2xl focus:outline-none focus:ring-2 focus:ring-teal-500
                         focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed
                         transition-all duration-200 shadow-lg"
             disabled={loading}
@@ -200,12 +205,11 @@ export default function Galeri() {
           )}
         </form>
       </div>
-
       {/* Galeri Table & State */}
       <div className="bg-white rounded-2xl shadow-lg overflow-x-auto mt-10">
         <div className="w-full">
           <div className="px-6 py-4 ">
-            <h3 className="text-lg font-semibold text-abu500">
+            <h3 className="font-arimo text-lg font-semibold text-abu500">
               Daftar Galeri ({galeri.length})
             </h3>
           </div>
@@ -224,35 +228,57 @@ export default function Galeri() {
             <table className="min-w-full bg-white">
               <thead>
                 <tr>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">#</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Judul</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Gambar</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Video</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Aksi</th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    #
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Judul
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Gambar
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Video
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Aksi
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {galeri.map((item, index) => (
                   <tr key={item.id}>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top font-semibold text-gray-700">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top font-semibold text-gray-700">
                       {index + 1}.
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">
-                      <div className="font-semibold text-emerald-600">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top">
+                      <div className="font-semibold text-teal-600">
                         {item.title}
                       </div>
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top max-w-xs">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top max-w-xs">
                       <div className="truncate text-gray-600">
-                        <a href={item.gambar} target="_blank" rel="noopener noreferrer">{item.gambar}</a>
+                        <a
+                          href={item.gambar}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.gambar}
+                        </a>
                       </div>
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top max-w-xs">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top max-w-xs">
                       <div className="truncate text-gray-600">
-                        <a href={item.video} target="_blank" rel="noopener noreferrer">{item.video}</a>
+                        <a
+                          href={item.video}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.video}
+                        </a>
                       </div>
                     </td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top">
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top">
                       <div className="flex gap-2 items-center">
                         <button
                           onClick={() => handleEdit(item)}

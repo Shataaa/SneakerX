@@ -43,25 +43,25 @@ export default function Customer() {
   };
 
   return (
-    <div className="p-4">
+    <div className="font-arimo p-4">
       {/* PageHeader */}
       <PageHeader title="Dashboard" breadcrumb={["Customer Review"]} />
 
       {/* Customer Table */}
-      <div className="overflow-x-auto">
-        <table className="min-w-full bg-white rounded-2xl">
+      <div className="font-arimo overflow-x-auto">
+        <table className="font-arimo min-w-full bg-white rounded-2xl">
           <thead>
             <tr>
-              <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+              <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                 Nama
               </th>
-              <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+              <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                 STATUS
               </th>
-              <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+              <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                 REVIEW
               </th>
-              <th className="px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
+              <th className="font-arimo px-6 py-4 text-left font-bold text-abu500 border-b border-gray-200">
                 ACTION
               </th>
             </tr>
@@ -69,22 +69,22 @@ export default function Customer() {
           <tbody>
             {customers.map((customer, index) => (
               <React.Fragment key={index}>
-                <tr className="border-t hover:bg-gray-50">
+                <tr className="font-arimo border-t hover:bg-gray-50">
                   {/* Nama dan Avatar */}
-                  <td className="px-6 py-4 text-abu500 border-b border-gray-200">
-                    <div className="flex items-center gap-3">
+                  <td className="font-arimo px-6 py-4 text-abu500 border-b border-gray-200">
+                    <div className="font-arimo flex items-center gap-3">
                       {/* Avatar */}
                       <img
                         src={customer.avatar}
                         alt={customer.customerName}
-                        className="w-10 h-10 rounded-full"
+                        className="font-arimo w-10 h-10 rounded-full"
                       />
                       {/* Nama dan Email */}
                       <div>
-                        <div className="font-bold text-abu500">
+                        <div className="font-arimo font-bold text-abu500">
                           {customer.customerName}
                         </div>
-                        <div className="text-abu500 text-sm">
+                        <div className="font-arimo text-abu500 text-sm">
                           {customer.email}
                         </div>
                       </div>
@@ -92,39 +92,39 @@ export default function Customer() {
                   </td>
 
                   {/* Status */}
-                  <td className="px-6 py-4 border-b border-gray-200">
+                  <td className="font-arimo px-6 py-4 border-b border-gray-200">
                     {customer.status === "Online" ? (
-                      <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                      <span className="font-arimo bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
                         Online
                       </span>
                     ) : (
-                      <span className="bg-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                      <span className="font-arimo bg-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
                         Offline
                       </span>
                     )}
                   </td>
 
                   {/* Review */}
-                  <td className="px-6 py-4 border-b border-gray-200 text-abu500">
+                  <td className="font-arimo px-6 py-4 border-b border-gray-200 text-abu500">
                     {customer.review}
                   </td>
 
                   {/* Action */}
-                  <td className="px-6 py-4 border-b border-gray-200">
-                    <div className="flex flex-col space-y-2">
+                  <td className="font-arimo px-6 py-4 border-b border-gray-200">
+                    <div className="font-arimo flex flex-col space-y-2">
                       <button
                         onClick={() => handleDelete(customer.customerId)}
-                        className="w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                        className="font-arimo w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
                       >
                         <FaTrash />
-                        <span>Delete</span>
+                        <span className="font-arimo">Delete</span>
                       </button>
                       <button
                         onClick={() => handleReply(customer.customerId)}
-                        className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                        className="font-arimo w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
                       >
                         <FaPen />
-                        <span>Reply</span>
+                        <span className="font-arimo">Reply</span>
                       </button>
                     </div>
                   </td>
@@ -133,18 +133,18 @@ export default function Customer() {
                 {/* Input Reply */}
                 {replyingTo === customer.customerId && (
                   <tr>
-                    <td colSpan="5" className="px-6 py-4">
-                      <div className="flex items-center space-x-4">
+                    <td colSpan="5" className="font-arimo px-6 py-4">
+                      <div className="font-arimo flex items-center space-x-4">
                         <input
                           type="text"
                           value={replyText}
                           onChange={(e) => setReplyText(e.target.value)}
                           placeholder="Type your reply here..."
-                          className="w-full border border-gray-200 p-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+                          className="font-arimo w-full border border-gray-200 p-2 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 text-abu500"
                         />
                         <button
                           onClick={() => handleSendReply(customer.customerId)}
-                          className="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600"
+                          className="font-arimo bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600"
                         >
                           Send
                         </button>

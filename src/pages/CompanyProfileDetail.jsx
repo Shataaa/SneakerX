@@ -14,18 +14,29 @@ export default function CompanyProfileDetail() {
       });
   }, [id]);
 
-  if (!company) return <div className="p-4">Loading...</div>;
+  if (!company) return <div className="font-arimo p-4">Loading...</div>;
 
   return (
-    <div className="max-w-xl mx-auto bg-white p-6 rounded shadow mt-8">
-      <Link to="/CompanyProfileList" className="text-teal-600 underline mb-4 inline-block">
+    <div className="font-arimo max-w-xl mx-auto bg-white p-6 rounded shadow mt-8">
+      <Link
+        to="/CompanyProfileList"
+        className="font-arimo text-teal-600 underline mb-4 inline-block"
+      >
         ← Kembali ke Daftar Perusahaan
       </Link>
-      <h2 className="text-2xl font-bold mb-2">{company.nama}</h2>
-      <div className="mb-2">Alamat: {company.alamat}</div>
-      <div className="mb-2">Lokasi: {company.lokasi}</div>
-      <div className="mb-2">Telepon: {company.telepon}</div>
-      <div className="mb-2">Email: {company.email}</div>
+      <h2 className="font-arimo text-2xl font-bold mb-2 text-abu500">
+        {company.nama}
+      </h2>
+      <div className="font-arimo mb-2 text-abu500">
+        Alamat: {company.alamat}
+      </div>
+      <div className="font-arimo mb-2 text-abu500">
+        Lokasi: {company.lokasi}
+      </div>
+      <div className="font-arimo mb-2 text-abu500">
+        Telepon: {company.telepon}
+      </div>
+      <div className="font-arimo mb-2 text-abu500">Email: {company.email}</div>
       {/* Tambahkan detail lain sesuai kebutuhan */}
     </div>
   );

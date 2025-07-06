@@ -57,16 +57,12 @@ export default function ArtikelNews() {
     e.preventDefault();
     if (editingId) {
       setArticles((prev) =>
-        prev.map((a) =>
-          a.id === editingId ? { ...a, ...formData } : a
-        )
+        prev.map((a) => (a.id === editingId ? { ...a, ...formData } : a))
       );
     } else {
-      const newId = articles.length > 0 ? articles[articles.length - 1].id + 1 : 1;
-      setArticles((prev) => [
-        ...prev,
-        { id: newId, ...formData },
-      ]);
+      const newId =
+        articles.length > 0 ? articles[articles.length - 1].id + 1 : 1;
+      setArticles((prev) => [...prev, { id: newId, ...formData }]);
     }
     setShowForm(false);
     setEditingId(null);
@@ -81,88 +77,91 @@ export default function ArtikelNews() {
 
   if (loading) {
     return (
-      <div className="max-w-5xl mx-auto bg-white p-4 rounded shadow text-center">
+      <div className="font-arimo max-w-5xl mx-auto bg-white p-4 rounded shadow text-center">
         Loading...
       </div>
     );
   }
 
   return (
-    <div className="max-w-5xl mx-auto bg-white p-4 rounded-2xl">
-      <PageHeader title="Dashboard" breadcrumb={["Artikel News"]}/>
-      <div className="flex justify-between items-center mb-4">
-        
+    <div className="font-arimo max-w-5xl mx-auto bg-white p-4 rounded-2xl">
+      <PageHeader title="Dashboard" breadcrumb={["Artikel News"]} />
+      <div className="font-arimo flex justify-between items-center mb-4">
         <button
           onClick={handleAdd}
-          className="bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-teal-600"
+          className="font-arimo bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-teal-600"
         >
           <FaPlus />
-          <span>Tambah Artikel</span>
+          <span className="font-arimo">Tambah Artikel</span>
         </button>
       </div>
 
       {/* Form Tambah/Edit */}
       {showForm && (
-        <div className="mb-6 p-4 bg-gray-100 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold mb-4">
+        <div className="font-arimo mb-6 p-4 bg-gray-100 rounded-lg shadow-md text-abu500">
+          <h3 className="font-arimo text-xl font-semibold mb-4">
             {editingId ? "Edit Artikel" : "Tambah Artikel"}
           </h3>
           <form onSubmit={handleFormSubmit}>
-            <div className="mb-4">
-              <label className="block text-gray-700">Gambar (URL)</label>
+            <div className="font-arimo mb-4">
+              <label className="font-arimo block text-gray-700">
+                Gambar (URL)
+              </label>
               <input
                 type="text"
                 name="image"
                 value={formData.image}
                 onChange={handleFormChange}
-                className="w-full px-4 py-2 border rounded-lg"
+                className="font-arimo w-full px-4 py-2 border rounded-lg"
                 required
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Judul</label>
+            <div className="font-arimo mb-4">
+              <label className="font-arimo block text-gray-700">Judul</label>
               <input
                 type="text"
                 name="judul"
                 value={formData.judul}
                 onChange={handleFormChange}
-                className="w-full px-4 py-2 border rounded-lg"
+                className="font-arimo w-full px-4 py-2 border rounded-lg"
                 required
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Tanggal</label>
+            <div className="font-arimo mb-4">
+              <label className="font-arimo block text-gray-700">Tanggal</label>
               <input
                 type="date"
                 name="tanggal"
                 value={formData.tanggal}
                 onChange={handleFormChange}
-                className="w-full px-4 py-2 border rounded-lg"
+                className="font-arimo w-full px-4 py-2 border rounded-lg"
                 required
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Isi Berita</label>
+            <div className="font-arimo mb-4">
+              <label className="font-arimo block text-gray-700">
+                Isi Berita
+              </label>
               <textarea
                 name="isi"
                 value={formData.isi}
                 onChange={handleFormChange}
-                className="w-full px-4 py-2 border rounded-lg"
+                className="font-arimo w-full px-4 py-2 border rounded-lg"
                 rows={4}
                 required
               />
             </div>
-            <div className="flex gap-2">
+            <div className="font-arimo flex gap-2">
               <button
                 type="submit"
-                className="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600"
+                className="font-arimo bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600"
               >
                 Simpan
               </button>
               <button
                 type="button"
                 onClick={handleCancel}
-                className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
+                className="font-arimo bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
               >
                 Batal
               </button>
@@ -172,51 +171,56 @@ export default function ArtikelNews() {
       )}
 
       {/* List Artikel */}
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse bg-white rounded-2xl">
+      <div className="font-arimo overflow-x-auto">
+        <table className="font-arimo w-full border-collapse bg-white rounded-2xl">
           <thead>
-            <tr className="text-left text-gray-700 border-b border-gray-200 text-sm uppercase tracking-wider">
-              <th className="px-4 py-3">Gambar</th>
-              <th className="px-4 py-3">Judul</th>
-              <th className="px-4 py-3">Tanggal</th>
-              <th className="px-4 py-3">Isi Berita</th>
-              <th className="px-4 py-3">Action</th>
+            <tr className="font-arimo text-left text-gray-700 border-b border-gray-200 text-sm uppercase tracking-wider">
+              <th className="font-arimo px-4 py-3">Gambar</th>
+              <th className="font-arimo px-4 py-3">Judul</th>
+              <th className="font-arimo px-4 py-3">Tanggal</th>
+              <th className="font-arimo px-4 py-3">Isi Berita</th>
+              <th className="font-arimo px-4 py-3">Action</th>
             </tr>
           </thead>
           <tbody>
             {articles.map((article) => (
-              <tr key={article.id} className="text-gray-700 border-b border-gray-200 hover:bg-gray-50 align-top">
-                <td className="px-4 py-3 w-24">
+              <tr
+                key={article.id}
+                className="font-arimo text-gray-700 border-b border-gray-200 hover:bg-gray-50 align-top"
+              >
+                <td className="font-arimo px-4 py-3 w-24">
                   <img
                     src={article.image}
                     alt={article.judul}
-                    className="w-16 h-16 object-cover rounded"
+                    className="font-arimo w-16 h-16 object-cover rounded"
                   />
                 </td>
-                <td className="px-4 py-3 font-semibold w-48">
+                <td className="font-arimo px-4 py-3 font-semibold w-48">
                   <Link
                     to={`/artikel/${article.id}`}
-                    className="text-black hover:underline"
+                    className="font-arimo text-black hover:underline"
                   >
                     {article.judul}
                   </Link>
                 </td>
-                <td className="px-4 py-3 w-32">{article.tanggal}</td>
-                <td className="px-4 py-3 break-words">{article.isi}</td>
-                <td className="px-4 py-3 flex gap-2">
+                <td className="font-arimo px-4 py-3 w-32">{article.tanggal}</td>
+                <td className="font-arimo px-4 py-3 break-words">
+                  {article.isi}
+                </td>
+                <td className="font-arimo px-4 py-3 flex gap-2">
                   <button
                     onClick={() => handleEdit(article)}
-                    className="bg-yellow-500 text-white px-3 py-2 rounded-lg flex items-center space-x-2 hover:bg-yellow-600 text-sm"
+                    className="font-arimo bg-yellow-500 text-white px-3 py-2 rounded-lg flex items-center space-x-2 hover:bg-yellow-600 text-sm"
                   >
                     <FaEdit />
-                    <span>Edit</span>
+                    <span className="font-arimo">Edit</span>
                   </button>
                   <button
                     onClick={() => handleDelete(article.id)}
-                    className="bg-red-500 text-white px-3 py-2 rounded-lg flex items-center space-x-2 hover:bg-red-600 text-sm"
+                    className="font-arimo bg-red-500 text-white px-3 py-2 rounded-lg flex items-center space-x-2 hover:bg-red-600 text-sm"
                   >
                     <FaTrash />
-                    <span>Hapus</span>
+                    <span className="font-arimo">Hapus</span>
                   </button>
                 </td>
               </tr>

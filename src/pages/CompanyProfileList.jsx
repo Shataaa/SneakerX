@@ -25,82 +25,87 @@ export default function CompanyProfileList() {
 
   const handleDelete = (id) => {
     if (window.confirm("Yakin ingin menghapus data ini?")) {
-      setCompanies((prev) => prev.filter((c, idx) => (c.id ? c.id : idx) !== id));
+      setCompanies((prev) =>
+        prev.filter((c, idx) => (c.id ? c.id : idx) !== id)
+      );
     }
   };
 
   if (loading) {
     return (
-      <div className="max-w-4xl mx-auto bg-white p-4 rounded shadow text-center">
+      <div className="font-arimo max-w-4xl mx-auto bg-white p-4 rounded shadow text-center">
         Loading...
       </div>
     );
   }
 
   return (
-    <div className="overflow-x-auto">
+    <div className="font-arimo overflow-x-auto">
       <PageHeader title="Dashboard" breadcrumb={["Company List"]} />
-      <table className="min-w-full bg-white rounded-2xl">
+      <table className="font-arimo min-w-full bg-white rounded-2xl">
         <thead>
           <tr>
-            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+            <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
               Nama
             </th>
-            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+            <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
               Alamat
             </th>
-            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+            <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
               Lokasi
             </th>
-            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+            <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
               Telepon
             </th>
-            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+            <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
               Email
             </th>
-            <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+            <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
               Action
             </th>
           </tr>
         </thead>
         <tbody>
           {companies.map((company, idx) => (
-            <tr key={company.id || idx} className="border-t hover:bg-gray-50">
-              <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+            <tr
+              key={company.id || idx}
+              className="font-arimo border-t hover:bg-gray-50"
+            >
+              <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                 <Link
                   to={`/company/${company.id}`}
-                  className="text-black hover:underline"
+                  className="font-arimo text-black hover:underline"
                 >
                   {company.nama || "-"}
                 </Link>
               </td>
-              <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+              <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                 {company.alamat || "-"}
               </td>
-              <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+              <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                 {company.lokasi || "-"}
               </td>
-              <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+              <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                 {company.telepon || "-"}
               </td>
-              <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+              <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                 {company.email}
               </td>
-              <td className="px-6 py-4 border-b border-gray-200">
-                <div className="flex flex-col space-y-2">
+              <td className="font-arimo px-6 py-4 border-b border-gray-200">
+                <div className="font-arimo flex flex-col space-y-2">
                   <button
                     onClick={() => handleDelete(company.id ? company.id : idx)}
-                    className="w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                    className="font-arimo w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
                   >
                     <FaTrash />
-                    <span>Delete</span>
+                    <span className="font-arimo">Delete</span>
                   </button>
                   <button
                     onClick={() => handleEdit(company)}
-                    className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                    className="font-arimo w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
                   >
                     <FaEdit />
-                    <span>Edit</span>
+                    <span className="font-arimo">Edit</span>
                   </button>
                 </div>
               </td>

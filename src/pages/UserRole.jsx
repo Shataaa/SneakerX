@@ -59,11 +59,17 @@ export default function UserRole() {
         email: dataForm.email,
         password: dataForm.password,
         role: dataForm.role,
-        status_user: dataForm.status_user, 
+        status_user: dataForm.status_user,
       });
 
       setSuccess("User berhasil ditambahkan!");
-      setDataForm({ nama: "", email: "", password: "", role: "", status_user: "" });
+      setDataForm({
+        nama: "",
+        email: "",
+        password: "",
+        role: "",
+        status_user: "",
+      });
       setTimeout(() => setSuccess(""), 3000);
       loadUserRole();
     } catch (err) {
@@ -117,7 +123,13 @@ export default function UserRole() {
       await UserRoleAPI.updateUserRole(editId, dataForm);
       setSuccess("User berhasil diupdate!");
       setEditId(null);
-      setDataForm({ nama: "", email: "", password: "", role: "", status_user: "" });
+      setDataForm({
+        nama: "",
+        email: "",
+        password: "",
+        role: "",
+        status_user: "",
+      });
       setTimeout(() => setSuccess(""), 3000);
       loadUserRole();
     } catch (err) {
@@ -128,108 +140,20 @@ export default function UserRole() {
   };
 
   return (
-    <div className="max-w-6xl w-full mx-auto p-6"> {/* Ubah max-w-2xl ke max-w-6xl */}
+    <div className="max-w-6xl w-full mx-auto p-6">
+      {" "}
+      {/* Ubah max-w-2xl ke max-w-6xl */}
       <div className="mb-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-2">User Role App</h2>
+        <h2 className="font-arimo text-3xl font-bold text-gray-800 mb-2">
+          User Role App
+        </h2>
       </div>
-
       {error && <AlertBox type="error">{error}</AlertBox>}
       {success && <AlertBox type="success">{success}</AlertBox>}
-
-      {/* Form Card */}
-      <div className="bg-white rounded-2xl shadow-lg p-6 mb-10">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">
-          Tambah User Baru
-        </h3>
-        <form onSubmit={editId ? handleUpdate : handleSubmit} className="space-y-4 text-abu500">
-          <input
-            type="text"
-            name="nama"
-            value={dataForm.nama}
-            placeholder="Nama"
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          />
-          <input
-            type="email"
-            name="email"
-            value={dataForm.email}
-            placeholder="Email"
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          />
-          <input
-            type="text"
-            name="password"
-            value={dataForm.password}
-            placeholder="Password"
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          />
-          <select
-            name="role"
-            value={dataForm.role}
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          >
-            <option value="">Pilih Role</option>
-            <option value="Admin">Admin</option>
-            <option value="Kasir">Kasir</option>
-            <option value="Staff">Staff</option>
-          </select>
-          <select
-            name="status_user"
-            value={dataForm.status_user}
-            onChange={handleChange}
-            disabled={loading}
-            required
-            className="w-full p-3 bg-gray-50 rounded-2xl border border-gray-200"
-          >
-            <option value="">Pilih Status User</option>
-            <option value="Aktif">Aktif</option>
-            <option value="Nonaktif">Nonaktif</option>
-          </select>
-          <button
-            type="submit"
-            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold
-                        rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500
-                        focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed
-                        transition-all duration-200 shadow-lg"
-            disabled={loading}
-          >
-            {loading
-              ? "Mohon Tunggu..."
-              : editId
-              ? "Update User"
-              : "Tambah User"}
-          </button>
-          {editId && (
-            <button
-              type="button"
-              onClick={() => {
-                setEditId(null);
-                setDataForm({ nama: "", email: "", password: "", role: "", status_user: "" });
-              }}
-              className="ml-2 px-6 py-3 bg-gray-400 text-white rounded-2xl"
-            >
-              Batal Edit
-            </button>
-          )}
-        </form>
-      </div>
-
       {/* User Role Table & State */}
-      <div className="bg-white rounded-2xl shadow-lg overflow-x-auto">
+      <div className="font-arimo bg-white rounded-2xl shadow-lg overflow-x-auto">
         <div className="px-6 py-4 ">
-          <h3 className="text-lg font-semibold text-abu500">
+          <h3 className="font-arimo text-lg font-semibold text-abu500">
             Daftar User ({userRole.length})
           </h3>
         </div>
@@ -245,47 +169,58 @@ export default function UserRole() {
         )}
 
         {!loading && userRole.length > 0 ? (
-          <div className="w-full"> {/* Ubah min-w-[900px] ke w-full */}
+          <div className="w-full">
+            {" "}
+            {/* Ubah min-w-[900px] ke w-full */}
             <table className="min-w-full bg-white">
               <thead>
                 <tr>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">#</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Nama</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Email</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Password</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Role</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Status User</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Created At</th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">Aksi</th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    #
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Nama
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Email
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Password
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Role
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Status User
+                  </th>
+                  <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+                    Created At
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {userRole.map((user, idx) => (
                   <tr key={user.id}>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top font-semibold text-gray-700">{idx + 1}.</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.nama}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.email}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.password}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.role}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.status_user}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">{user.created_at}</td>
-                    <td className="px-6 py-4 border-b border-gray-200 align-top text-gray-700">
-                      <div className="flex gap-2 items-center">
-                        <button
-                          onClick={() => handleEdit(user)}
-                          className="px-3 py-1 bg-yellow-100 rounded hover:bg-yellow-200 transition-colors"
-                          title="Edit"
-                        >
-                          <AiFillEdit className="text-2xl text-yellow-500" />
-                        </button>
-                        <button
-                          onClick={() => handleDelete(user.id)}
-                          className="px-3 py-1 bg-red-100 rounded hover:bg-red-200 transition-colors"
-                          title="Hapus"
-                        >
-                          <AiFillDelete className="text-2xl text-red-500" />
-                        </button>
-                      </div>
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top font-semibold text-gray-700">
+                      {idx + 1}.
+                    </td>
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top text-teal-700">
+                      {user.nama}
+                    </td>
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top text-gray-700">
+                      {user.email}
+                    </td>
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top text-gray-700">
+                      {user.password}
+                    </td>
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top text-gray-700">
+                      {user.role}
+                    </td>
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top text-gray-700">
+                      {user.status_user}
+                    </td>
+                    <td className="font-arimo px-6 py-4 border-b border-gray-200 align-top text-gray-700">
+                      {user.created_at}
                     </td>
                   </tr>
                 ))}

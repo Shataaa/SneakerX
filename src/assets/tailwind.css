@@ -15,7 +15,18 @@
     src: url('/fonts/Poppins-ExtraBold.ttf');
 }
 
+@font-face {
+    font-family: 'Arimo';
+    src: url('/fonts/Arimo-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Arimo Variable';
+    src: url('/fonts/Arimo-VariableFont_wght.ttf');
+}
+
 @theme{
+    --font-arimo: "Arimo", sans-serif;
     --font-barlow: "Barlow", sans-serif;
     --font-poppins: "Poppins", sans-serif;
     --font-poppins-extrabold: "Poppins ExtraBold", sans-serif;

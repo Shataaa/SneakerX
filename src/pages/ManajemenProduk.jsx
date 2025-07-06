@@ -74,12 +74,12 @@ export default function ManajemenProduk() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto bg-white p-4 rounded-2xl">
-      <PageHeader title="Dashboard" breadcrumb={["Manajemen Produk"]}/>
+    <div className="font-arimo max-w-5xl mx-auto bg-white p-4 rounded-2xl text-abu500">
+      <PageHeader title="Dashboard" breadcrumb={["Manajemen Produk"]} />
       {!showAddForm && (
         <button
           onClick={() => setShowAddForm(true)}
-          className="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 flex items-center space-x-2 mb-6"
+          className="font-arimo bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 flex items-center space-x-2 mb-6"
         >
           <FaPlus />
           <span>Tambah Produk</span>
@@ -93,7 +93,7 @@ export default function ManajemenProduk() {
           onCancel={() => setShowAddForm(false)}
         />
       )}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="font-arimo grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
           <ProductCard
             key={product.id}

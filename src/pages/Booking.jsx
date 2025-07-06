@@ -45,26 +45,23 @@ export default function Booking() {
   };
 
   return (
-    <div className="p-4">
+    <div className="font-arimo p-4">
       {/* PageHeader */}
       <PageHeader title="Dashboard" breadcrumb={["Booking List"]} />
 
       {/* Booking Table */}
-      <div className="overflow-x-auto">
-        <table className="min-w-full bg-white rounded-2xl">
+      <div className="font-arimo overflow-x-auto">
+        <table className="font-arimo min-w-full bg-white rounded-2xl">
           <thead>
             <tr>
-              <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+              <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
                 Produk
               </th>
-              <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+              <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
                 Harga
               </th>
-              <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
+              <th className="font-arimo px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
                 Jumlah
-              </th>
-              <th className="px-6 py-4 text-left font-bold text-gray-500 border-b border-gray-200">
-                Action
               </th>
             </tr>
           </thead>
@@ -76,27 +73,30 @@ export default function Booking() {
                 0
               ); // Hitung total harga
               return (
-                <tr key={index} className="border-t hover:bg-gray-50">
+                <tr
+                  key={index}
+                  className="font-arimo border-t hover:bg-gray-50"
+                >
                   {/* Nama, Email, dan Avatar */}
-                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
-                    <div className="flex items-center space-x-4">
+                  <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
+                    <div className="font-arimo flex items-center space-x-4">
                       {customer.avatar && (
                         <img
                           src={customer.avatar}
                           alt={customer.customerName}
-                          className="w-12 h-12 object-cover rounded-full"
+                          className="font-arimo w-12 h-12 object-cover rounded-full"
                         />
                       )}
                       <div>
-                        <div className="font-semibold">
+                        <div className="font-arimo font-semibold">
                           <Link
                             to={`/booking/${index}`}
-                            className="text-blue-600 hover:underline"
+                            className="font-arimo text-teal-600 hover:underline"
                           >
                             {customer.customerName || `Customer ${index + 1}`}
                           </Link>
                         </div>
-                        <div className="text-sm text-gray-500">
+                        <div className="font-arimo text-sm text-gray-500">
                           {customer.email || ""}
                         </div>
                       </div>
@@ -104,19 +104,19 @@ export default function Booking() {
                   </td>
 
                   {/* Produk yang Dibooking (Nama + Gambar) */}
-                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
-                    <ul className="space-y-2">
+                  <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
+                    <ul className="font-arimo space-y-2">
                       {bookedProducts.map((product) => (
                         <li
                           key={product.id}
-                          className="flex items-center space-x-4"
+                          className="font-arimo flex items-center space-x-4"
                         >
                           <img
                             src={product.image}
                             alt={product.name}
-                            className="w-12 h-12 object-cover rounded-md"
+                            className="font-arimo w-12 h-12 object-cover rounded-md"
                           />
-                          <span>
+                          <span className="font-arimo">
                             {product.name} - Rp{product.price?.toLocaleString()}
                           </span>
                         </li>
@@ -125,28 +125,8 @@ export default function Booking() {
                   </td>
 
                   {/* Total Harga */}
-                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
+                  <td className="font-arimo px-6 py-4 text-gray-700 border-b border-gray-200">
                     Rp{totalPrice.toLocaleString()}
-                  </td>
-
-                  {/* Action Buttons */}
-                  <td className="px-6 py-4 text-gray-700 border-b border-gray-200">
-                    <div className="flex flex-col space-y-2">
-                      <button
-                        onClick={() => handleDelete(customer.id)}
-                        className="w-full bg-red-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
-                      >
-                        <FaTrash />
-                        <span>Delete</span>
-                      </button>
-                      <button
-                        onClick={() => handleReply(customer.id)}
-                        className="w-full bg-teal-500 text-white px-4 py-2 rounded-lg flex items-center gap-2"
-                      >
-                        <FaPen />
-                        <span>Reply</span>
-                      </button>
-                    </div>
                   </td>
                 </tr>
               );
