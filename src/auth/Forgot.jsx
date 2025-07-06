@@ -25,7 +25,7 @@ export default function Forgot() {
           <input
             type="email"
             id="email"
-            className="font-arimo w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400"
+            className="font-arimo w-full px-4 py-2 text-black bg-gray-50 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400"
             placeholder="you@example.com"
           />
         </div>
